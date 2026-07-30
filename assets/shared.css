@@ -98,6 +98,10 @@ body{display:flex;flex-direction:column;min-height:100vh}
 .article-meta .sep{color:var(--bdr-2)}
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--sage);margin-bottom:18px}
 .back-link:hover{color:var(--forest)}
+.author-box{display:flex;align-items:center;gap:12px;padding:14px 0 22px;margin-bottom:22px;border-bottom:1px solid var(--bdr)}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--mint);color:var(--forest);font-family:var(--serif);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.author-name{font-size:.83rem;font-weight:600;color:var(--ink)}
+.author-role{font-size:.72rem;color:var(--ink-3)}
 .article-cta{background:var(--forest);border-radius:var(--r16);padding:28px 32px;text-align:center;margin:40px 0}
 .article-cta h3{color:var(--white);font-size:1.15rem;margin-bottom:8px}
 .article-cta p{color:rgba(255,255,255,.65);font-size:.85rem;margin-bottom:18px}
