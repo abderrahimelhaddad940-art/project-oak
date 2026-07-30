@@ -102,6 +102,7 @@ section{padding:88px 0}
 /* Primary CTA: white on forest — WCAG: #fff on #1B4332 = 9.2:1 ✓ */
 .nav-cta{display:inline-flex;align-items:center;height:38px;padding:0 20px;background:var(--forest);color:var(--white);border:none;border-radius:var(--rpill);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:background .15s,transform .1s;white-space:nowrap}
 .nav-cta:hover{background:var(--forest-2);transform:translateY(-1px)}
+.cta-short{display:none}
 
 /* ── SECTION EYEBROW ── */
 .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--sage);margin-bottom:14px}
@@ -470,6 +471,15 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .founder-inner{flex-direction:column;gap:16px;text-align:center}
   .founder-av{margin:0 auto}
 }
+@media(max-width:400px){
+  .cta-full{display:none}
+  .cta-short{display:inline}
+  .nav-cta{padding:0 14px;font-size:.74rem}
+  .nav-w{gap:8px}
+  .sb-btn{padding:0 14px;font-size:.78rem}
+  .sb-left{min-width:0}
+  .sb-price{font-size:1.05rem}
+}
 @media(prefers-reduced-motion:reduce){
   .sr,.btn-primary,.pc-btn,.btn-final{transition:background .15s}
   .sr{opacity:1;transform:none}
@@ -616,7 +626,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       <a href="/blog/" class="nav-lnk">Blog</a>
       <a href="/about.html" class="nav-lnk">About</a>
     </div>
-    <a href="#pricing" class="nav-cta" aria-label="Get your complete estate plan for $499">Get my estate plan — $499</a>
+    <a href="#pricing" class="nav-cta" aria-label="Get your complete estate plan for $499"><span class="cta-full">Get my estate plan — $499</span><span class="cta-short">Get plan — $499</span></a>
   </div>
 </nav>
 
@@ -1238,7 +1248,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     <div class="sb-label">GuardTies</div>
     <div class="sb-price">$499 · Download in 2h</div>
   </div>
-  <a href="#pricing" class="sb-btn" aria-label="Get my estate plan">Get my estate plan <span aria-hidden="true">→</span></a>
+  <a href="#pricing" class="sb-btn" aria-label="Get my estate plan"><span class="cta-full">Get my estate plan</span><span class="cta-short">Get plan</span> <span aria-hidden="true">→</span></a>
   <button class="sb-close" id="sb-dismiss" aria-label="Dismiss this bar">✕</button>
 </div>
 

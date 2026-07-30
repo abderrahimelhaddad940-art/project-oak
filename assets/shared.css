@@ -41,6 +41,13 @@ strong{font-weight:600;color:var(--ink)}
 .logo-icon svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.2}
 .nav-cta{display:inline-flex;align-items:center;height:38px;padding:0 20px;background:var(--forest);color:var(--white);border:none;border-radius:var(--rpill);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.01em;transition:background .15s,transform .1s;white-space:nowrap}
 .nav-cta:hover{background:var(--forest-2);transform:translateY(-1px)}
+.cta-short{display:none}
+@media(max-width:400px){
+  .cta-full{display:none}
+  .cta-short{display:inline}
+  .nav-cta{padding:0 14px;font-size:.74rem}
+  .nav-w{gap:8px}
+}
 .nav-links{display:flex;align-items:center;gap:22px}
 .nav-lnk{font-size:.78rem;color:var(--ink-3);transition:color .15s}
 .nav-lnk:hover{color:var(--forest)}
