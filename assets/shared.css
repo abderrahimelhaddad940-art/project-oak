@@ -81,8 +81,8 @@ main{padding:56px 0 72px}
 
 /* ── FOOTER (matches homepage) ── */
 footer{background:#0D1F17;padding:32px 0;text-align:center;margin-top:auto}
-.footer-brand{font-family:var(--serif);font-size:.82rem;font-weight:600;color:rgba(255,255,255,.45);margin-bottom:8px}
-.footer-legal{font-size:.66rem;color:rgba(255,255,255,.2);line-height:1.75;max-width:540px;margin:0 auto 12px}
+.footer-brand{font-family:var(--serif);font-size:.82rem;font-weight:600;color:rgba(255,255,255,.65);margin-bottom:8px}
+.footer-legal{font-size:.66rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:540px;margin:0 auto 12px}
 .footer-links{font-size:.73rem}
 .footer-links a{color:rgba(255,255,255,.5);text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.2)}
 .footer-links a:hover{color:rgba(255,255,255,.88)}
