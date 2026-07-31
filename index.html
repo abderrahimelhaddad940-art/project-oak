@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -94,8 +93,7 @@ section{padding:88px 0}
 #nav.shd{box-shadow:0 2px 12px rgba(17,24,39,.07)}
 .nav-w{max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--forest);display:flex;align-items:center;gap:9px;letter-spacing:-.02em}
-.logo-icon{width:28px;height:28px;background:var(--forest);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-icon svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.2}
+.logo-icon{width:30px;height:30px;border-radius:50%;flex-shrink:0;object-fit:contain}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-lnk{font-size:.78rem;color:var(--ink-3);transition:color .15s}
 .nav-lnk:hover{color:var(--forest)}
@@ -494,6 +492,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   "@type": "Organization",
   "name": "GuardTies",
   "url": "https://guardties.com/",
+  "logo": "https://guardties.com/assets/nav-logo.png",
   "email": "support@guardties.com",
   "description": "GuardTies provides a self-serve, one-time-purchase estate planning document package — 57 professionally drafted documents guiding a complete estate plan without hiring an attorney.",
   "sameAs": []
@@ -614,9 +613,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-w">
     <a href="#" class="logo" aria-label="GuardTies — return to top">
-      <div class="logo-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
+      <img class="logo-icon" src="/assets/nav-logo.png" width="30" height="30" alt="GuardTies" decoding="async">
       GuardTies
     </a>
     <div class="nav-links">
