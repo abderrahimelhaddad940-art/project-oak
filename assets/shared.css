@@ -51,7 +51,7 @@ strong{font-weight:600;color:var(--ink)}
 .nav-lnk{font-size:.78rem;color:var(--ink-3);transition:color .15s}
 .nav-lnk:hover{color:var(--forest)}
 .nav-lnk.active{color:var(--forest);font-weight:600}
-@media(max-width:680px){.nav-links{display:none}}
+@media(max-width:900px){.nav-links{display:none}}
 
 /* ── PAGE HEADER ── */
 .page-header{background:var(--forest);padding:56px 0 44px}
