@@ -1,0 +1,35 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hero photo placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D6A4F"/>
+      <stop offset="100%" stop-color="#1B4332"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="rgba(255,255,255,0.08)"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#dots)"/>
+
+  <!-- dashed placeholder frame -->
+  <rect x="40" y="40" width="720" height="920" rx="24" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="2" stroke-dasharray="10 8"/>
+
+  <!-- simple house + family glyph, line art -->
+  <g transform="translate(400,400)" stroke="rgba(255,255,255,0.55)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-90,10 L0,-70 L90,10"/>
+    <path d="M-60,10 L-60,80 L60,80 L60,10"/>
+    <path d="M-20,80 L-20,30 L20,30 L20,80"/>
+    <circle cx="0" cy="-95" r="14" fill="rgba(255,255,255,0.55)" stroke="none"/>
+  </g>
+
+  <text x="400" y="560" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#FFFFFF">
+    Hero photo placeholder
+  </text>
+  <text x="400" y="596" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" fill="rgba(255,255,255,0.72)">
+    Replace assets/hero-photo-placeholder.svg
+  </text>
+  <text x="400" y="620" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" fill="rgba(255,255,255,0.72)">
+    Recommended: real photo, 1000×1250px (4:5), warm/candid family or home scene
+  </text>
+</svg>

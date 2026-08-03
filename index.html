@@ -124,7 +124,13 @@ section{padding:88px 0}
   line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;
   white-space:nowrap;
 }
-.hero-inner{max-width:var(--max);margin:0 auto;padding:0 32px;text-align:center;position:relative;z-index:1}
+.hero-inner{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;text-align:left}
+.hero-copy{min-width:0}
+
+/* ── Hero photo ── */
+.hero-media{position:relative}
+.hero-photo-card{position:relative;border-radius:var(--r24);overflow:hidden;box-shadow:var(--sh3);aspect-ratio:4/5;background:var(--forest-2)}
+.hero-photo-card img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ── THE SIGNATURE ELEMENT: instant access badge ── */
 .delivery-badge{
@@ -135,6 +141,12 @@ section{padding:88px 0}
   justify-content:center;gap:2px;
   margin:0 auto 32px;
   position:relative;
+}
+/* Overlaid on the hero photo card instead of centered above the headline */
+.hero-media .delivery-badge{
+  position:absolute;bottom:-22px;left:-22px;margin:0;
+  background:var(--forest);border:3px solid var(--linen);
+  box-shadow:0 10px 28px rgba(0,0,0,.3);z-index:2;
 }
 /* Subtle sweep ring animation */
 .delivery-badge::after{
@@ -149,7 +161,7 @@ section{padding:88px 0}
 .db-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.75)}
 
 /* Social proof */
-.hero-proof{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.hero-proof{display:flex;align-items:center;justify-content:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:24px}
 .hp-stars{display:flex;gap:2px}
 .hp-star{width:13px;height:13px;fill:var(--gold-lt);flex-shrink:0}
 .hp-txt{font-size:.76rem;color:rgba(255,255,255,.75)}
@@ -157,17 +169,17 @@ section{padding:88px 0}
 .hp-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
 
 /* Hero headline */
-.hero-h{color:var(--white);margin-bottom:18px;max-width:620px;margin-left:auto;margin-right:auto}
+.hero-h{color:var(--white);margin-bottom:18px;max-width:560px}
 .hero-h .ital{font-style:italic;color:var(--sage-lt)}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.78;max-width:500px;margin:0 auto 32px}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.78;max-width:480px;margin:0 0 32px}
 
 /* Trust pills */
-.hero-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:36px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-start;margin-bottom:36px}
 .hp{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.75);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--rpill);padding:5px 12px}
 .hp-ok{color:var(--sage-lt);font-weight:700}
 
 /* Hero CTA group */
-.hero-cta-group{display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero-cta-group{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .btn-primary{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   height:56px;padding:0 36px;
@@ -185,7 +197,7 @@ section{padding:88px 0}
 .hero-cta-note{font-size:.72rem;color:rgba(255,255,255,.75);letter-spacing:.01em}
 
 /* Hero stats */
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:var(--r12);overflow:hidden;margin-top:48px;max-width:500px;margin-left:auto;margin-right:auto}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:var(--r12);overflow:hidden;margin-top:48px;max-width:500px}
 .hstat{background:rgba(255,255,255,.04);padding:16px 10px;text-align:center}
 .hstat-n{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--white);line-height:1}
 .hstat-l{font-size:.62rem;color:rgba(255,255,255,.75);margin-top:4px;text-transform:uppercase;letter-spacing:.07em}
@@ -470,9 +482,20 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .rv-expert-badge{display:flex;align-items:center;gap:8px;padding:6px 10px}
   .founder-inner{flex-direction:column;gap:16px;text-align:center}
   .founder-av{margin:0 auto}
+  .hero-media{max-width:280px;margin:0 auto}
+  .hero-media .delivery-badge{bottom:-14px;left:-10px}
 }
 @media(max-width:900px){
   .nav-links{display:none}
+}
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero-copy{display:flex;flex-direction:column;align-items:center}
+  .hero-proof,.hero-pills{justify-content:center}
+  .hero-cta-group{align-items:center}
+  .hero-h,.hero-sub{margin-left:auto;margin-right:auto}
+  .hero-stats{margin-left:auto;margin-right:auto}
+  .hero-media{max-width:360px;margin:0 auto}
 }
 @media(max-width:400px){
   .cta-full{display:none}
@@ -637,48 +660,58 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="hero" aria-label="Hero">
   <div class="hero-inner">
 
-    <!-- THE SIGNATURE ELEMENT: Download in 24 hours badge -->
-    <div class="delivery-badge sr" aria-label="Download in 24 hours — $580 one-time">
-      <div class="db-number">24h</div>
-      <div class="db-label">Delivery</div>
-    </div>
+    <div class="hero-copy">
 
-    <div class="hero-proof sr">
-      <div class="hp-stars" role="img" aria-label="5 stars">
-        <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-        <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-        <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-        <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-        <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+      <div class="hero-proof sr">
+        <div class="hp-stars" role="img" aria-label="5 stars">
+          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <div class="hp-txt"><strong>4.9 / 5</strong></div>
+        <div class="hp-sep" aria-hidden="true"></div>
+        <div class="hp-txt">Trusted by <strong>1,470+ clients</strong> across all 50 states</div>
       </div>
-      <div class="hp-txt"><strong>4.9 / 5</strong></div>
-      <div class="hp-sep" aria-hidden="true"></div>
-      <div class="hp-txt">Trusted by <strong>1,470+ clients</strong> across all 50 states</div>
+
+      <h1 class="hero-h sr">Give your family<br>the gift of clarity.</h1>
+
+      <p class="hero-sub sr">You have spent a lifetime building something worth protecting.<br>GuardTies makes estate planning feel <span style="color:var(--sage-lt);font-weight:500">simple, guided, and done</span>.</p>
+
+      <div class="hero-pills sr">
+        <div class="hp"><span class="hp-ok">✓</span>Skip probate entirely</div>
+        <div class="hp"><span class="hp-ok">✓</span>Keep your estate private</div>
+        <div class="hp"><span class="hp-ok">✓</span>You control who gets what and when</div>
+        <div class="hp"><span class="hp-ok">✓</span>Step-by-step guided — no guessing</div>
+        <div class="hp"><span class="hp-ok">✓</span>30-day guarantee</div>
+      </div>
+
+      <div class="hero-cta-group sr">
+        <a href="#pricing" class="btn-primary" aria-label="Get your complete estate plan — $580">
+          Get my complete estate plan <span class="btn-arr" aria-hidden="true">→</span>
+        </a>
+        <div class="hero-cta-note">One-time payment · Download in 24 hours · No subscription</div>
+      </div>
+
+      <div class="hero-stats sr" role="list">
+        <div class="hstat" role="listitem"><div class="hstat-n">57</div><div class="hstat-l">Documents</div></div>
+        <div class="hstat" role="listitem"><div class="hstat-n">1 wknd</div><div class="hstat-l">Typical finish</div></div>
+        <div class="hstat" role="listitem"><div class="hstat-n">$580</div><div class="hstat-l">One-time</div></div>
+      </div>
+
     </div>
 
-    <h1 class="hero-h sr">Give your family<br>the gift of clarity.</h1>
-
-    <p class="hero-sub sr">You have spent a lifetime building something worth protecting.<br>GuardTies makes estate planning feel <span style="color:var(--sage-lt);font-weight:500">simple, guided, and done</span>.</p>
-
-    <div class="hero-pills sr">
-      <div class="hp"><span class="hp-ok">✓</span>Skip probate entirely</div>
-      <div class="hp"><span class="hp-ok">✓</span>Keep your estate private</div>
-      <div class="hp"><span class="hp-ok">✓</span>You control who gets what and when</div>
-      <div class="hp"><span class="hp-ok">✓</span>Step-by-step guided — no guessing</div>
-      <div class="hp"><span class="hp-ok">✓</span>30-day guarantee</div>
-    </div>
-
-    <div class="hero-cta-group sr">
-      <a href="#pricing" class="btn-primary" aria-label="Get your complete estate plan — $580">
-        Get my complete estate plan <span class="btn-arr" aria-hidden="true">→</span>
-      </a>
-      <div class="hero-cta-note">One-time payment · Download in 24 hours · No subscription</div>
-    </div>
-
-    <div class="hero-stats sr" role="list">
-      <div class="hstat" role="listitem"><div class="hstat-n">57</div><div class="hstat-l">Documents</div></div>
-      <div class="hstat" role="listitem"><div class="hstat-n">1 wknd</div><div class="hstat-l">Typical finish</div></div>
-      <div class="hstat" role="listitem"><div class="hstat-n">$580</div><div class="hstat-l">One-time</div></div>
+    <div class="hero-media sr">
+      <div class="hero-photo-card">
+        <!-- Placeholder — replace src with a real photo (recommend 1000×1250px, 4:5) -->
+        <img src="/assets/hero-photo-placeholder.svg" width="1000" height="1250" alt="A family reviewing their GuardTies estate plan together at home" loading="eager" fetchpriority="high">
+      </div>
+      <!-- THE SIGNATURE ELEMENT: Download in 24 hours badge, overlaid on the photo -->
+      <div class="delivery-badge" aria-label="Download in 24 hours — $580 one-time">
+        <div class="db-number">24h</div>
+        <div class="db-label">Delivery</div>
+      </div>
     </div>
 
   </div>
