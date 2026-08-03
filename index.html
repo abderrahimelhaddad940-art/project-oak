@@ -538,8 +538,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .nav-w{padding:0 20px}
   .founder-inner{flex-direction:column;gap:16px;text-align:center}
   .founder-av{margin:0 auto}
-  .hero-media{max-width:280px;margin:0 auto}
-  .hero-media .delivery-badge{bottom:-14px;left:-10px}
+  .hero-media .delivery-badge{bottom:-14px;left:-10px;width:84px;height:84px}
+  .hero-media .db-number{font-size:1.9rem}
 }
 @media(max-width:900px){
   .nav-links{display:none}
@@ -550,13 +550,22 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .who-card{height:220px}
 }
 @media(max-width:980px){
-  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center}
-  .hero-copy{display:flex;flex-direction:column;align-items:center}
-  .hero-proof,.hero-pills{justify-content:center}
-  .hero-cta-group{align-items:center}
+  /* Single column. display:contents flattens .hero-copy so the photo can be
+     ordered between the headline and the body copy instead of after all of it. */
+  .hero-inner{display:flex;flex-direction:column;gap:0;text-align:center}
+  .hero-copy{display:contents}
+  /* hook -> explain -> show -> act -> reassure: photo lands above the fold
+     without pushing the CTA below it */
+  .hero-proof{order:1;justify-content:center}
+  .hero-h{order:2}
+  .hero-sub{order:3;margin-bottom:22px}
+  .hero-media{order:4;width:100%;max-width:420px;margin:0 auto 26px}
+  .hero-cta-group{order:5;align-items:center}
+  .hero-pills{order:6;justify-content:center;margin-top:26px;margin-bottom:0}
+  .hero-stats{order:7;margin-left:auto;margin-right:auto;margin-top:26px}
   .hero-h,.hero-sub{margin-left:auto;margin-right:auto}
-  .hero-stats{margin-left:auto;margin-right:auto}
-  .hero-media{max-width:360px;margin:0 auto}
+  /* Landscape crop keeps the photo prominent without pushing the CTA off-screen */
+  .hero-photo-card{aspect-ratio:3/2}
 }
 @media(max-width:400px){
   .cta-full{display:none}
