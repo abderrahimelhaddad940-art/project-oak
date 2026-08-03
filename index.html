@@ -48,6 +48,19 @@
   --gold:    #D4A017;
   --gold-lt: #F0C040;
   --gold-bg: rgba(212,160,23,.1);
+  /* Categorical accents — icon variety only (document/persona cards), never on CTAs or brand chrome */
+  --acc-blue:    #3D5A80;
+  --acc-blue-bg: rgba(61,90,128,.12);
+  --acc-clay:    #BC6C3D;
+  --acc-clay-bg: rgba(188,108,61,.12);
+  --acc-rose:    #A4506B;
+  --acc-rose-bg: rgba(164,80,107,.12);
+  --acc-teal:    #2A7F7E;
+  --acc-teal-bg: rgba(42,127,126,.12);
+  --acc-plum:    #7A4B6D;
+  --acc-plum-bg: rgba(122,75,109,.12);
+  --acc-indigo:    #4A5A8C;
+  --acc-indigo-bg: rgba(74,90,140,.12);
   /* Borders */
   --bdr:     #E5E7EB;
   --bdr-2:   #D1D5DB;
@@ -227,6 +240,21 @@ section{padding:88px 0}
 .doc-section.featured{border-color:var(--forest);border-width:2px}
 .ds-icon{width:36px;height:36px;background:var(--mint);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
 .ds-icon svg{width:16px;height:16px;stroke:var(--forest);fill:none;stroke-width:2}
+/* Categorical icon accents — document + persona cards only */
+.ds-icon.c-blue,.persona-icon.c-blue{background:var(--acc-blue-bg)}
+.ds-icon.c-blue svg,.persona-icon.c-blue svg{stroke:var(--acc-blue)}
+.ds-icon.c-clay,.persona-icon.c-clay{background:var(--acc-clay-bg)}
+.ds-icon.c-clay svg,.persona-icon.c-clay svg{stroke:var(--acc-clay)}
+.ds-icon.c-rose,.persona-icon.c-rose{background:var(--acc-rose-bg)}
+.ds-icon.c-rose svg,.persona-icon.c-rose svg{stroke:var(--acc-rose)}
+.ds-icon.c-teal,.persona-icon.c-teal{background:var(--acc-teal-bg)}
+.ds-icon.c-teal svg,.persona-icon.c-teal svg{stroke:var(--acc-teal)}
+.ds-icon.c-plum,.persona-icon.c-plum{background:var(--acc-plum-bg)}
+.ds-icon.c-plum svg,.persona-icon.c-plum svg{stroke:var(--acc-plum)}
+.ds-icon.c-gold{background:var(--gold-bg)}
+.ds-icon.c-gold svg{stroke:var(--gold)}
+.ds-icon.c-indigo,.persona-icon.c-indigo{background:var(--acc-indigo-bg)}
+.ds-icon.c-indigo svg,.persona-icon.c-indigo svg{stroke:var(--acc-indigo)}
 .ds-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:4px}
 .ds-count{font-size:.68rem;color:var(--sage);font-weight:500;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em}
 .ds-docs{display:flex;flex-direction:column;gap:4px}
@@ -926,7 +954,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="ds-note">Before you open a single document, you know exactly which ones apply and in what order. No other product starts here.</div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="ds-icon c-blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <div class="ds-title">Revocable Living Trust</div>
         <div class="ds-count">6 documents</div>
         <div class="ds-docs">
@@ -938,7 +966,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <div class="ds-icon c-clay"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
         <div class="ds-title">Will &amp; Final Wishes</div>
         <div class="ds-count">5 documents</div>
         <div class="ds-docs">
@@ -949,7 +977,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.41 5.41l1.67-1.67a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="ds-icon c-rose"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.41 5.41l1.67-1.67a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <div class="ds-title">Healthcare &amp; Medical</div>
         <div class="ds-count">5 documents</div>
         <div class="ds-docs">
@@ -960,7 +988,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div class="ds-icon c-teal"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <div class="ds-title">Financial &amp; Legal Authority</div>
         <div class="ds-count">5 documents</div>
         <div class="ds-docs">
@@ -971,7 +999,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div class="ds-icon c-indigo"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
         <div class="ds-title">Asset Inventory &amp; Funding</div>
         <div class="ds-count">6 documents</div>
         <div class="ds-docs">
@@ -982,7 +1010,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="ds-icon c-gold"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <div class="ds-title">Advanced Protection <span style="font-size:.56rem;background:var(--gold-bg);color:#88660F;padding:2px 5px;border-radius:2px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle;margin-left:4px">Premium</span></div>
         <div class="ds-count">15 additional documents</div>
         <div class="ds-docs">
@@ -997,7 +1025,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
       </div>
       <div class="doc-section sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="ds-icon c-plum"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <div class="ds-title">Legacy &amp; Organization</div>
         <div class="ds-count">10 documents</div>
         <div class="ds-docs">
@@ -1072,31 +1100,31 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
     <div class="persona-grid">
       <div class="persona sr">
-        <div class="persona-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="persona-icon c-rose"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="persona-t">The new parent</div>
         <div class="persona-d">You have children who depend on you. Naming a guardian and establishing a trust matters more now than it ever has.</div>
         <div class="persona-tag">Guardian nomination · Parents trust path · Minor milestone trust</div>
       </div>
       <div class="persona sr">
-        <div class="persona-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="persona-icon c-blue"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <div class="persona-t">The homeowner</div>
         <div class="persona-d">You own property and want it to pass directly to the people you choose — without probate court, without delays.</div>
         <div class="persona-tag">Property owner path · Trust funding checklist · Real estate provisions</div>
       </div>
       <div class="persona sr">
-        <div class="persona-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="persona-icon c-plum"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <div class="persona-t">The blended family</div>
         <div class="persona-d">You have step-children, children from a prior relationship, or a complex family structure that a standard template doesn't fit.</div>
         <div class="persona-tag">Blended family guide · Second marriage clauses · Expanded beneficiary templates</div>
       </div>
       <div class="persona sr">
-        <div class="persona-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <div class="persona-icon c-clay"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
         <div class="persona-t">The procrastinator</div>
         <div class="persona-d">You've known you needed this for years. The guided needs assessment removes every excuse — you know exactly where to start, what applies, and when you're done.</div>
         <div class="persona-tag">Needs assessment · Completion guide · Plain English execution walkthrough</div>
       </div>
       <div class="persona sr">
-        <div class="persona-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="persona-icon c-teal"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="persona-t">The almost-done</div>
         <div class="persona-d">You have a will or a POA but no trust, no healthcare directive, no beneficiary tracker. You want a complete plan, not another partial one.</div>
         <div class="persona-tag">Gap analysis · Beneficiary designation tracker · Completion checklist</div>
