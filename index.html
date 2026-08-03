@@ -131,10 +131,10 @@ section{padding:88px 0}
 /* Subtle texture — large background text */
 #hero::before{
   content:'GuardTies';
-  position:absolute;bottom:-2rem;right:-1rem;
-  font-family:var(--serif);font-size:clamp(8rem,18vw,14rem);
+  position:absolute;left:50%;bottom:-1.5rem;transform:translateX(-50%);
+  font-family:var(--serif);font-size:clamp(5rem,13vw,10rem);
   font-weight:600;color:rgba(255,255,255,.04);
-  line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;
+  line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em;
   white-space:nowrap;
 }
 .hero-inner{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;text-align:left}
