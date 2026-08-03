@@ -244,6 +244,8 @@ section{padding:88px 0}
 @media(max-width:680px){
   .mq-card{width:270px}
   .marquee-track{animation-duration:45s}
+  /* These proof lines wrap on narrow screens; the divider would strand at a line end */
+  .hp-sep,.mh-sep{display:none}
 }
 /* Reduced motion: stop the loop, let people swipe through instead */
 @media(prefers-reduced-motion:reduce){
@@ -733,7 +735,9 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </div>
         <div class="hp-txt"><strong>4.9 / 5</strong></div>
         <div class="hp-sep" aria-hidden="true"></div>
-        <div class="hp-txt">From <strong>85 verified reviews</strong></div>
+        <div class="hp-txt">from 85 reviews</div>
+        <div class="hp-sep" aria-hidden="true"></div>
+        <div class="hp-txt">Trusted by <strong>1,470+ customers</strong></div>
       </div>
 
       <h1 class="hero-h sr">Give your family<br>the gift of clarity.</h1>
@@ -795,6 +799,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     <div class="mh-txt"><strong>4.9 / 5</strong></div>
     <div class="mh-sep" aria-hidden="true"></div>
     <div class="mh-txt"><strong>82 of 85 reviewers</strong> gave 5 stars</div>
+    <div class="mh-sep" aria-hidden="true"></div>
+    <div class="mh-txt"><strong>1,470+ customers</strong> protected</div>
   </div>
   <div class="marquee">
     <div class="marquee-track">
@@ -1276,7 +1282,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       <div class="ps"><div class="ps-n">4.9★</div><div class="ps-l">Rating</div></div>
       <div class="ps"><div class="ps-n">1 wknd</div><div class="ps-l">Typical finish</div></div>
       <div class="ps"><div class="ps-n">30 day</div><div class="ps-l">Guarantee</div></div>
-      <div class="ps"><div class="ps-n">85</div><div class="ps-l">Verified reviews</div></div>
+      <div class="ps"><div class="ps-n">1,470+</div><div class="ps-l">Customers</div></div>
     </div>
     <div class="rv-grid">
       <div class="rv top sr">
