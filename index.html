@@ -7,9 +7,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <title>GuardTies — Your Complete Estate Plan. Instant Download.</title>
-<meta name="description" content="Skip the attorney fees. GuardTies gives you a complete, guided estate plan — 57 professionally drafted documents, delivered in 24 hours. $580 flat.">
+<meta name="description" content="Skip the attorney fees. GuardTies gives you a complete, guided estate plan — 57 professionally drafted documents, delivered in 24 hours. From $499 flat.">
 <meta property="og:title" content="GuardTies — Your Complete Estate Plan. Instant Download.">
-<meta property="og:description" content="Give your family the gift of clarity. A complete estate plan — 57 professionally drafted documents, guided system, instant download. $580.">
+<meta property="og:description" content="Give your family the gift of clarity. A complete estate plan — 57 professionally drafted documents, guided system, instant download. From $499.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://guardties.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://guardties.com/assets/og-image.png">
 <meta name="twitter:title" content="GuardTies — Your Complete Estate Plan. Instant Download.">
-<meta name="twitter:description" content="57 professionally drafted estate planning documents. Guided system. Download in 24 hours. $580.">
+<meta name="twitter:description" content="57 professionally drafted estate planning documents. Guided system. Download in 24 hours. From $499.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -349,18 +349,49 @@ section{padding:88px 0}
    PRICING
 ════════════════════════════ */
 #pricing{background:var(--forest);padding:88px 0}
+/* Two tiers side by side; they equalise height so the CTAs line up */
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px;margin:32px auto 0;align-items:stretch}
 .pricing-card{
   background:var(--white);
   border-radius:var(--r16);
-  padding:40px 40px 36px;
-  max-width:560px;
-  margin:32px auto 0;
+  padding:32px 30px 28px;
   box-shadow:var(--sh3);
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.pricing-card.featured{border:2px solid var(--gold)}
+.pc-badge{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#3D2C05;
+  font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  padding:4px 12px;border-radius:var(--rpill);white-space:nowrap;
+}
+/* Bonus "sticker" — a tilted seal so it reads as something stuck on the card */
+.pc-sticker{
+  display:flex;align-items:center;gap:9px;
+  background:var(--gold-bg);border:1.5px dashed rgba(212,160,23,.55);
+  border-radius:var(--r8);padding:9px 12px;margin-bottom:18px;
+}
+.pc-sticker-seal{
+  flex-shrink:0;width:38px;height:38px;border-radius:50%;
+  background:var(--gold);color:#3D2C05;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-weight:800;line-height:1;transform:rotate(-9deg);
+  box-shadow:0 2px 6px rgba(212,160,23,.4);
+}
+.pc-sticker-seal .s1{font-size:.52rem;letter-spacing:.04em}
+.pc-sticker-seal .s2{font-size:.46rem;letter-spacing:.06em;margin-top:1px}
+.pc-sticker-t{font-size:.73rem;font-weight:700;color:#7A5C0C;line-height:1.3}
+.pc-sticker-d{font-size:.66rem;color:var(--ink-3);line-height:1.4;margin-top:1px}
+.pc-foot{margin-top:auto}
+@media(max-width:680px){
+  .pricing-grid{grid-template-columns:1fr;gap:26px;max-width:420px}
+  .pricing-card{padding:28px 22px 24px}
 }
 .pc-tag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--sage);margin-bottom:16px}
 .pc-name{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin-bottom:4px}
 .pc-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
-.pc-price{font-family:var(--serif);font-size:4rem;font-weight:600;color:var(--forest);line-height:1}
+.pc-price{font-family:var(--serif);font-size:3.1rem;font-weight:600;color:var(--forest);line-height:1}
 .pc-period{font-size:.82rem;color:var(--ink-3)}
 .pc-anchor{font-size:.86rem;color:var(--ink-2);margin-bottom:14px}
 .pc-anchor strong{color:var(--forest);font-weight:600}
@@ -385,7 +416,7 @@ section{padding:88px 0}
 .pc-ghost:hover{border-color:var(--forest);color:var(--forest)}
 .pc-includes{margin-bottom:22px}
 .pc-inc-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:10px}
-.pc-inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.pc-inc-grid{display:grid;grid-template-columns:1fr;gap:6px}
 .pc-inc-item{display:flex;gap:6px;align-items:flex-start;font-size:.76rem;color:var(--ink-2);line-height:1.4}
 .pc-inc-ok{color:var(--forest);font-weight:700;flex-shrink:0;margin-top:1px;font-size:.78rem}
 .pc-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding-top:16px;border-top:1px solid var(--bdr)}
@@ -534,8 +565,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .cmp-col{border:1px solid var(--bdr);border-radius:var(--r8)}
   .cmp-col.us{order:-1}
   .pbar{grid-template-columns:repeat(2,1fr)}
-  .pricing-card{padding:28px 22px}
-  .pc-price{font-size:3rem}
+  .pc-price{font-size:2.8rem}
   .pc-inc-grid{grid-template-columns:1fr}
   .nav-w{padding:0 20px}
   .founder-inner{flex-direction:column;gap:16px;text-align:center}
@@ -630,13 +660,37 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     "name": "GuardTies"
   },
   "offers": {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
     "url": "https://guardties.com/#pricing",
     "priceCurrency": "USD",
-    "price": "580",
-    "priceValidUntil": "2027-12-31",
+    "lowPrice": "499",
+    "highPrice": "599",
+    "offerCount": "2",
     "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition"
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Individual",
+        "description": "Complete estate planning system covering one person. Includes the Bypass Estate Tax Savings Guide.",
+        "url": "https://guardties.com/#pricing",
+        "priceCurrency": "USD",
+        "price": "499",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      },
+      {
+        "@type": "Offer",
+        "name": "Couple",
+        "description": "Complete estate planning system covering both partners. Includes the Bypass Estate Tax Savings Guide.",
+        "url": "https://guardties.com/#pricing",
+        "priceCurrency": "USD",
+        "price": "599",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    ]
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -710,10 +764,10 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     },
     {
       "@type": "Question",
-      "name": "Is $580 worth it compared to an attorney?",
+      "name": "Is $499 worth it compared to an attorney?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The average estate attorney charges $3,500–$10,000+ for a comparable document set. You receive 57 professionally drafted documents as an instant download for roughly the cost of one to two hours of attorney time, backed by a 30-day money-back guarantee."
+        "text": "The average estate attorney charges $3,500–$10,000+ for a comparable document set. You receive 57 professionally drafted documents as an instant download for roughly the cost of one to two hours of attorney time — $499 for an individual, $599 covering both partners — backed by a 30-day money-back guarantee."
       }
     },
     {
@@ -746,7 +800,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       <a href="/blog/" class="nav-lnk">Blog</a>
       <a href="/about.html" class="nav-lnk">About</a>
     </div>
-    <a href="#pricing" class="nav-cta" aria-label="Get your complete estate plan for $580"><span class="cta-full">Get my estate plan — $580</span><span class="cta-short">Get plan — $580</span></a>
+    <a href="#pricing" class="nav-cta" aria-label="See pricing — plans from $499"><span class="cta-full">Get my estate plan — from $499</span><span class="cta-short">Plans from $499</span></a>
   </div>
 </nav>
 
@@ -786,7 +840,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       </div>
 
       <div class="hero-cta-group sr">
-        <a href="#pricing" class="btn-primary" aria-label="Get your complete estate plan — $580">
+        <a href="#pricing" class="btn-primary" aria-label="Get your complete estate plan — plans from $499">
           Get my complete estate plan <span class="btn-arr" aria-hidden="true">→</span>
         </a>
         <div class="hero-cta-note">One-time payment · Download in 24 hours · No subscription</div>
@@ -809,7 +863,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         </picture>
       </div>
       <!-- THE SIGNATURE ELEMENT: Download in 24 hours badge, overlaid on the photo -->
-      <div class="delivery-badge" aria-label="Download in 24 hours — $580 one-time">
+      <div class="delivery-badge" aria-label="Download in 24 hours — one-time payment">
         <div class="db-number">24h</div>
         <div class="db-label">Delivery</div>
       </div>
@@ -1256,7 +1310,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
     <div style="display:flex;justify-content:space-between;align-items:center;background:var(--forest);border-radius:var(--r8);padding:14px 20px;margin-top:4px" class="sr">
       <span style="font-size:.84rem;color:rgba(255,255,255,.75)">GuardTies — 57 documents, download in 24 hours</span>
-      <span style="font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--white)">$580</span>
+      <span style="font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--white)">$499<span style="font-size:.8rem;font-family:var(--sans);color:rgba(255,255,255,.75);margin-left:5px">/ $599 couple</span></span>
     </div>
   </div>
 </section>
@@ -1276,7 +1330,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="cmp-row"><span class="cmp-ok">✓</span><span>Keeps your estate completely private</span></div>
         <div class="cmp-row"><span class="cmp-ok">✓</span><span>You control how and when wealth transfers</span></div>
         <div class="cmp-row"><span class="cmp-ok">✓</span><span>30-day money-back guarantee</span></div>
-        <div class="cmp-row" style="margin-top:4px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white)">$580</span><span style="color:rgba(255,255,255,.75);font-size:.76rem;margin-left:4px">one-time</span></div>
+        <div class="cmp-row" style="margin-top:4px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)"><span style="font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--white)">$499–$599</span><span style="color:rgba(255,255,255,.75);font-size:.76rem;margin-left:4px">one-time</span></div>
       </div>
       <div class="cmp-col them">
         <div class="cmp-head">DIY Template Bundles</div>
@@ -1365,38 +1419,86 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   <div class="w">
     <div class="sr" style="text-align:center;margin-bottom:0">
       <span class="eyebrow" style="justify-content:center">Pricing</span>
-      <h2 style="color:var(--white)">One product. One price.<br>Everything your family needs.</h2>
-
+      <h2 style="color:var(--white)">Two plans. One flat price each.<br>Everything your family needs.</h2>
+      <p style="margin:12px auto 0;max-width:480px;color:rgba(255,255,255,.75);font-size:.9rem">Same complete system either way — choose the one that matches your household.</p>
     </div>
-    <div class="pricing-card sr">
-      <div class="pc-tag">Complete Estate Planning System</div>
-      <div class="pc-name">GuardTies</div>
-      <div class="pc-price-row">
-        <div class="pc-price">$580</div>
-        <div class="pc-period">one-time payment</div>
-      </div>
-      <div class="pc-anchor">vs. <strong>$3,500–$10,000+</strong> at a local law firm</div>
-      <div class="pc-atty">Download within 24 hours. Start immediately. Complete in a weekend.</div>
-      <div class="pc-includes">
-        <div class="pc-inc-lbl">What you get</div>
-        <div class="pc-inc-grid">
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>57 professionally drafted documents</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Download within 24 hours</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Guided needs assessment — no guessing</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Skip probate entirely</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Keep your estate private</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Control when &amp; how wealth transfers</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>All 50 states · Word + PDF formats</div>
-          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>30-day money-back guarantee</div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card sr">
+        <div class="pc-tag">For one person</div>
+        <div class="pc-name">Individual</div>
+        <div class="pc-price-row">
+          <div class="pc-price">$499</div>
+          <div class="pc-period">one-time</div>
+        </div>
+        <div class="pc-anchor">vs. <strong>$3,500–$10,000+</strong> at a local law firm</div>
+        <div class="pc-atty">Your complete estate plan, covering you.</div>
+
+        <div class="pc-sticker">
+          <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
+          <div>
+            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+            <div class="pc-sticker-d">Included free — no extra cost</div>
+          </div>
+        </div>
+
+        <div class="pc-includes">
+          <div class="pc-inc-lbl">What you get</div>
+          <div class="pc-inc-grid">
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>57 drafted documents</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Download within 24 hours</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Guided needs assessment</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Skip probate entirely</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Keep your estate private</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>All 50 states · Word + PDF</div>
+          </div>
+        </div>
+
+        <div class="pc-foot">
+          <a href="#" class="pc-btn" aria-label="Get the Individual estate plan — $499">Get my plan — $499 <span aria-hidden="true">→</span></a>
+          <a href="#faqs" class="pc-ghost" aria-label="I have a question first">I have a question first</a>
         </div>
       </div>
-      <a href="#" class="pc-btn" aria-label="Get my complete estate plan — 24 hour delivery — $580">Get my estate plan — 24h Delivery <span aria-hidden="true">→</span></a>
-      <a href="#faqs" class="pc-ghost" aria-label="I have a question first">I have a question first</a>
-      <div class="pc-trust">
-        <div class="pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-day money-back guarantee</div>
-        <div class="pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure checkout</div>
-        <div class="pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download in 24 hours</div>
+
+      <div class="pricing-card featured sr">
+        <div class="pc-badge">Most families choose this</div>
+        <div class="pc-tag">For two — both partners covered</div>
+        <div class="pc-name">Couple</div>
+        <div class="pc-price-row">
+          <div class="pc-price">$599</div>
+          <div class="pc-period">one-time</div>
+        </div>
+        <div class="pc-anchor">Two individual plans would be <strong>$998</strong> — you save $399</div>
+        <div class="pc-atty">One complete estate plan covering both of you.</div>
+
+        <div class="pc-sticker">
+          <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
+          <div>
+            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+            <div class="pc-sticker-d">Included free — no extra cost</div>
+          </div>
+        </div>
+
+        <div class="pc-includes">
+          <div class="pc-inc-lbl">What you get</div>
+          <div class="pc-inc-grid">
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Everything in Individual</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Covers both partners — one plan for your household</div>
+            <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>$399 less than buying two individual plans</div>
+          </div>
+        </div>
+
+        <div class="pc-foot">
+          <a href="#" class="pc-btn" aria-label="Get the Couple estate plan — $599">Get our plan — $599 <span aria-hidden="true">→</span></a>
+          <a href="#faqs" class="pc-ghost" aria-label="I have a question first">I have a question first</a>
+        </div>
       </div>
+
+    </div>
+    <div class="pc-trust" style="border-top:none;padding-top:22px;max-width:820px;margin:0 auto">
+      <div class="pct" style="color:rgba(255,255,255,.75)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-day money-back guarantee</div>
+      <div class="pct" style="color:rgba(255,255,255,.75)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure checkout</div>
+      <div class="pct" style="color:rgba(255,255,255,.75)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download in 24 hours</div>
     </div>
     <div class="guarantee-strip sr">
       <div class="gs-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
@@ -1431,7 +1533,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 
       <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"What if my situation changes after I complete my plan?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>Life changes — and your plan should keep up. Your package includes a trust amendment form so you can update without rewriting everything, and an annual review checklist that prompts you to revisit after major life events: marriage, divorce, new children, new property, retirement.</p><div class="pills"><span class="pill">✓ Trust amendment form</span><span class="pill">✓ Annual review checklist</span></div></div></div></div>
 
-      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"Is $580 worth it compared to an attorney?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>The average estate attorney charges $3,500–$10,000+ for a comparable document set — and that doesn't include the estate tax strategy, lifetime beneficiary protections, or generational planning documents included here. The average one-hour attorney consultation alone costs $250–$400.</p><p>You're receiving 57 professionally drafted documents available as an instant download, for the price of roughly one to two hours of attorney time. With a 30-day money-back guarantee, the risk is zero.</p><div class="acc-hl"><strong>The math:</strong> $580 vs $3,500–$10,000+ attorney fees. One weekend vs months of back-and-forth. 30-day guarantee vs non-refundable hourly billing.</div></div></div></div>
+      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"Is $499 worth it compared to an attorney?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>The average estate attorney charges $3,500–$10,000+ for a comparable document set — and that doesn't include the estate tax strategy, lifetime beneficiary protections, or generational planning documents included here. The average one-hour attorney consultation alone costs $250–$400.</p><p>You're receiving 57 professionally drafted documents available as an instant download, for the price of roughly one to two hours of attorney time. With a 30-day money-back guarantee, the risk is zero.</p><div class="acc-hl"><strong>The math:</strong> $499 individual / $599 couple vs $3,500–$10,000+ attorney fees. One weekend vs months of back-and-forth. 30-day guarantee vs non-refundable hourly billing.</div></div></div></div>
 
       <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"I live in [state]. Will this work where I am?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>Yes. A state considerations flag sheet is included — it identifies every clause that may vary by state and tells you precisely what to verify locally. The 50-state notary and witness guide covers execution requirements for your specific state.</p><p>Most core estate planning documents follow a consistent framework across the United States. Where states differ — witness requirements, notary language, community property rules, POA statutes — your package covers it.</p></div></div></div>
     </div>
@@ -1444,7 +1546,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     <div class="sr">
       <h2 class="close-h">Your family deserves better than<br>a decision made <em style="color:var(--sage-lt)">without your guidance.</em></h2>
       <p class="close-sub">Without a plan, probate court becomes public. Your estate becomes a process. Your family becomes a waiting room. GuardTies changes all of that — with a guided system so clear that anyone can finish it, and documents so complete that nothing gets left behind. <em>Start today. Your family’s privacy, security, and future are protected before the weekend is over.</em></p>
-      <a href="#" class="btn-final" aria-label="Get my complete estate plan for $580">Get my estate plan — $580 <span aria-hidden="true">→</span></a>
+      <a href="#" class="btn-final" aria-label="Get my complete estate plan — plans from $499">Get my estate plan — from $499 <span aria-hidden="true">→</span></a>
       <p class="close-micro">57 documents · Download in 24 hours · Guided step-by-step · 30-day guarantee · No subscription</p>
     </div>
     <div class="close-trust sr">
@@ -1474,7 +1576,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <div id="sticky-bar" role="complementary" aria-label="Quick purchase">
   <div class="sb-left">
     <div class="sb-label">GuardTies</div>
-    <div class="sb-price" style="white-space:nowrap">$580 · Ready in 24h</div>
+    <div class="sb-price" style="white-space:nowrap">From $499 · Ready in 24h</div>
   </div>
   <a href="#pricing" class="sb-btn" aria-label="Get my estate plan"><span class="cta-full">Get my estate plan</span><span class="cta-short">Get plan</span> <span aria-hidden="true">→</span></a>
   <button class="sb-close" id="sb-dismiss" aria-label="Dismiss this bar">✕</button>
