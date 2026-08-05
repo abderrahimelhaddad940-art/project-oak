@@ -375,11 +375,6 @@ section{padding:88px 0}
 .who-card-overlay{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;z-index:2}
 .who-card-overlay h3{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:3px;letter-spacing:-.01em;line-height:1.25}
 .who-card-overlay p{font-size:.74rem;color:rgba(255,255,255,.85);line-height:1.4;margin:0}
-.who-card-icon-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg, var(--forest-2), var(--forest))}
-.who-card-icon-wrap svg{width:56px;height:56px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:1.5}
-.who-card-icon.c-clay .who-card-icon-wrap{background:linear-gradient(165deg, rgba(188,108,61,.45), var(--forest))}
-.who-card-icon.c-teal .who-card-icon-wrap{background:linear-gradient(165deg, rgba(42,127,126,.45), var(--forest))}
-.who-card-icon.c-gold .who-card-icon-wrap{background:linear-gradient(165deg, rgba(212,160,23,.45), var(--forest))}
 
 /* ════════════════════════════
    PRICING
@@ -1100,42 +1095,60 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
     <div class="who-grid">
       <div class="who-card sr">
-        <img src="/assets/who-new-parent-placeholder.svg" width="600" height="700" alt="A new parent with their young child at home" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="/assets/who-new-parent.webp" type="image/webp">
+          <img src="/assets/who-new-parent.jpg" width="1000" height="1250" alt="A new parent holding their infant's foot, a tender moment representing the family GuardTies helps protect" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The New Parent</h3>
           <p>Focus: Guardianship &amp; Minor's Trust</p>
         </div>
       </div>
       <div class="who-card sr">
-        <img src="/assets/who-homeowner-placeholder.svg" width="600" height="700" alt="A homeowner couple in front of their house" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="/assets/who-homeowner.webp" type="image/webp">
+          <img src="/assets/who-homeowner.jpg" width="1000" height="1250" alt="A new homeowner holding a house-shaped keychain with their front door keys" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The Homeowner</h3>
           <p>Focus: Probate Skip &amp; Property Transfer</p>
         </div>
       </div>
       <div class="who-card sr">
-        <img src="/assets/who-blended-family-placeholder.svg" width="600" height="700" alt="A blended family together at home" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="/assets/who-blended-family.webp" type="image/webp">
+          <img src="/assets/who-blended-family.jpg" width="1000" height="1250" alt="A multi-generational blended family gathered together at an outdoor evening get-together" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The Blended Family</h3>
           <p>Focus: Specific Allocations &amp; Spendthrift Clauses</p>
         </div>
       </div>
-      <div class="who-card who-card-icon c-clay sr">
-        <div class="who-card-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="who-card sr">
+        <picture>
+          <source srcset="/assets/who-procrastinator.webp" type="image/webp">
+          <img src="/assets/who-procrastinator.jpg" width="1000" height="1250" alt="A man relaxed on a couch working on a laptop, putting off a task for later" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The Procrastinator</h3>
           <p>Focus: Fast Setup &amp; Peace of Mind</p>
         </div>
       </div>
-      <div class="who-card who-card-icon c-teal sr">
-        <div class="who-card-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="who-card sr">
+        <picture>
+          <source srcset="/assets/who-almost-done.webp" type="image/webp">
+          <img src="/assets/who-almost-done.jpg" width="1000" height="1250" alt="An alarm clock placed on a laptop, a reminder of an estate plan that's been left unfinished" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The "Almost-Done"</h3>
           <p>Focus: Funding Checklist &amp; Notary Guide</p>
         </div>
       </div>
-      <div class="who-card who-card-icon c-gold sr">
-        <div class="who-card-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="who-card sr">
+        <picture>
+          <source srcset="/assets/who-wealth-builder.webp" type="image/webp">
+          <img src="/assets/who-wealth-builder.jpg" width="1000" height="1250" alt="A businessman in a suit working on his laptop, managing his wealth and assets" loading="lazy" decoding="async">
+        </picture>
         <div class="who-card-overlay">
           <h3>The Wealth Builder</h3>
           <p>Focus: Privacy &amp; Multi-Generational Transfer</p>
