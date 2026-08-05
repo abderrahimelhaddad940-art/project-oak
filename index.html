@@ -367,7 +367,7 @@ section{padding:88px 0}
 ════════════════════════════ */
 #who{background:var(--linen-2)}
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
-.who-card{position:relative;height:280px;border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh2);transition:transform .25s ease,box-shadow .25s ease}
+.who-card{display:block;position:relative;height:280px;border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh2);transition:transform .25s ease,box-shadow .25s ease;cursor:pointer}
 .who-card:hover{transform:translateY(-3px);box-shadow:var(--sh3)}
 .who-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .who-card:hover img{transform:scale(1.06)}
@@ -445,6 +445,9 @@ section{padding:88px 0}
 .pc-btn:hover{background:var(--forest-2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(27,67,50,.35)}
 .pc-ghost{display:block;width:100%;height:44px;line-height:42px;text-align:center;border:1.5px solid var(--bdr-2);border-radius:var(--rpill);font-size:.84rem;color:var(--ink-3);margin-bottom:20px;transition:border-color .15s,color .15s;text-decoration:none}
 .pc-ghost:hover{border-color:var(--forest);color:var(--forest)}
+/* Payment method badges — sit right under the buy button, reduce checkout hesitation */
+.pay-badges{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:16px}
+.pay-badges svg{flex-shrink:0;border-radius:3px}
 .pc-includes{margin-bottom:22px}
 .pc-inc-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:10px}
 .pc-inc-grid{display:grid;grid-template-columns:1fr;gap:6px}
@@ -1095,7 +1098,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       <p style="margin:8px auto 0;max-width:500px;color:var(--ink-3)">Which one sounds like you?</p>
     </div>
     <div class="who-grid">
-      <div class="who-card sr">
+      <a href="#pricing" class="who-card sr" aria-label="The New Parent — Guardianship and Minor's Trust focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-new-parent.webp" type="image/webp">
           <img src="/assets/who-new-parent.jpg" width="1000" height="1250" alt="A new parent holding their infant's foot, a tender moment representing the family GuardTies helps protect" loading="lazy" decoding="async">
@@ -1104,8 +1107,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The New Parent</h3>
           <p>Focus: Guardianship &amp; Minor's Trust</p>
         </div>
-      </div>
-      <div class="who-card sr">
+      </a>
+      <a href="#pricing" class="who-card sr" aria-label="The Homeowner — Probate Skip and Property Transfer focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-homeowner.webp" type="image/webp">
           <img src="/assets/who-homeowner.jpg" width="1000" height="1250" alt="A new homeowner holding a house-shaped keychain with their front door keys" loading="lazy" decoding="async">
@@ -1114,8 +1117,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The Homeowner</h3>
           <p>Focus: Probate Skip &amp; Property Transfer</p>
         </div>
-      </div>
-      <div class="who-card sr">
+      </a>
+      <a href="#pricing" class="who-card sr" aria-label="The Blended Family — Specific Allocations and Spendthrift Clauses focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-blended-family.webp" type="image/webp">
           <img src="/assets/who-blended-family.jpg" width="1000" height="1250" alt="A multi-generational blended family gathered together at an outdoor evening get-together" loading="lazy" decoding="async">
@@ -1124,8 +1127,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The Blended Family</h3>
           <p>Focus: Specific Allocations &amp; Spendthrift Clauses</p>
         </div>
-      </div>
-      <div class="who-card sr">
+      </a>
+      <a href="#pricing" class="who-card sr" aria-label="The Procrastinator — Fast Setup and Peace of Mind focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-procrastinator.webp" type="image/webp">
           <img src="/assets/who-procrastinator.jpg" width="1000" height="1250" alt="A man relaxed on a couch working on a laptop, putting off a task for later" loading="lazy" decoding="async">
@@ -1134,8 +1137,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The Procrastinator</h3>
           <p>Focus: Fast Setup &amp; Peace of Mind</p>
         </div>
-      </div>
-      <div class="who-card sr">
+      </a>
+      <a href="#pricing" class="who-card sr" aria-label="The Almost-Done — Funding Checklist and Notary Guide focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-almost-done.webp" type="image/webp">
           <img src="/assets/who-almost-done.jpg" width="1000" height="1250" alt="An alarm clock placed on a laptop, a reminder of an estate plan that's been left unfinished" loading="lazy" decoding="async">
@@ -1144,8 +1147,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The "Almost-Done"</h3>
           <p>Focus: Funding Checklist &amp; Notary Guide</p>
         </div>
-      </div>
-      <div class="who-card sr">
+      </a>
+      <a href="#pricing" class="who-card sr" aria-label="The Wealth Builder — Privacy and Multi-Generational Transfer focus. Jump to pricing.">
         <picture>
           <source srcset="/assets/who-wealth-builder.webp" type="image/webp">
           <img src="/assets/who-wealth-builder.jpg" width="1000" height="1250" alt="A businessman in a suit working on his laptop, managing his wealth and assets" loading="lazy" decoding="async">
@@ -1154,7 +1157,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
           <h3>The Wealth Builder</h3>
           <p>Focus: Privacy &amp; Multi-Generational Transfer</p>
         </div>
-      </div>
+      </a>
     </div>
     <div class="sr" style="text-align:center;margin-top:26px">
       <div style="font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:11px">Also a fit for</div>
@@ -1550,8 +1553,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       </div>
       <div class="rv sr">
         <div class="star-row" role="img" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg><svg class="star-svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg><svg class="star-svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg><svg class="star-svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg><svg class="star-svg" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg></div>
-        <div class="rv-q">"I downloaded this and it was the easiest to edit. The developer was wonderful to assist with any and all questions with prompt responses. I would definitely recommend his documents."</div>
-        <div class="rv-row"><div class="rv-av" aria-hidden="true">T</div><div><div class="rv-name">Tammy</div><div class="rv-meta">Verified purchase · Jan 2026</div></div><div class="rv-chk">✓ Verified</div></div>
+        <div class="rv-q">"Extremely useful, just what I needed. Saved me a lot of time, effort and head scratching."</div>
+        <div class="rv-row"><div class="rv-av" aria-hidden="true">R</div><div><div class="rv-name">Rose-Anne</div><div class="rv-meta">Verified purchase · Aug 2025</div></div><div class="rv-chk">✓ Verified</div></div>
       </div>
     </div>
     <div class="il-rv sr">
@@ -1654,6 +1657,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 
         <div class="pc-foot">
           <a href="#" class="pc-btn" aria-label="Get the Individual estate plan — $499">Get my plan — $499 <span aria-hidden="true">→</span></a>
+          <div class="pay-badges" aria-label="We accept Visa, Mastercard, American Express, and Apple Pay">
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><text x="16" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="700" font-style="italic" fill="#1A1F71" text-anchor="middle">VISA</text></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><circle cx="13" cy="10" r="6" fill="#EB001B"/><circle cx="19" cy="10" r="6" fill="#F79E1B" fill-opacity=".85"/></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#006FCF"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">AMEX</text></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#000"/><text x="16" y="13" font-family="-apple-system,Arial,sans-serif" font-size="7.5" font-weight="600" fill="#fff" text-anchor="middle">Pay</text></svg>
+          </div>
           <a href="#faqs" class="pc-ghost" aria-label="I have a question first">I have a question first</a>
         </div>
       </div>
@@ -1689,6 +1698,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 
         <div class="pc-foot">
           <a href="#" class="pc-btn" aria-label="Get the Couple estate plan — $599">Get our plan — $599 <span aria-hidden="true">→</span></a>
+          <div class="pay-badges" aria-label="We accept Visa, Mastercard, American Express, and Apple Pay">
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><text x="16" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="700" font-style="italic" fill="#1A1F71" text-anchor="middle">VISA</text></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><circle cx="13" cy="10" r="6" fill="#EB001B"/><circle cx="19" cy="10" r="6" fill="#F79E1B" fill-opacity=".85"/></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#006FCF"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">AMEX</text></svg>
+            <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#000"/><text x="16" y="13" font-family="-apple-system,Arial,sans-serif" font-size="7.5" font-weight="600" fill="#fff" text-anchor="middle">Pay</text></svg>
+          </div>
           <a href="#faqs" class="pc-ghost" aria-label="I have a question first">I have a question first</a>
         </div>
       </div>
@@ -1746,9 +1761,9 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     <div class="acc sr">
       <div class="acc-item on"><div class="acc-q" role="button" tabindex="0" aria-expanded="true"><div class="acc-q-t">"What exactly do I get, and how do I access it?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>Within 24 hours of checkout you receive a download link to all 57 documents in both editable Word (.docx) and fillable PDF — organized across 8 sections and ready to open.</p><p>Start with Section 1 — the needs assessment questionnaire takes about 5 minutes and tells you exactly which documents apply to your situation. Most buyers complete their full estate plan in a single focused weekend — or spread it across 30 days at your own pace. Either way, you'll know when you're done.</p><div class="acc-hl"><strong>What you receive:</strong> 57 documents · Word + PDF · Download in 24 hours · No subscription · Yours permanently.</div></div></div></div>
 
-      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"What's the difference between a trust and a will — and do I need both?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>A will tells people what you want after you die — but it goes through probate court, which is public, slow (9–18 months), and expensive. A revocable living trust does the same job but bypasses probate entirely: assets transfer directly to your beneficiaries, privately, within days.</p><p>The short answer: you need both. A pour-over will catches anything you didn't transfer into your trust during your lifetime. Your trust handles the rest. GuardTies includes both, along with the healthcare and financial documents that complete the picture.</p><div class="acc-hl"><strong>Bottom line:</strong> A will is your backstop. A trust is your primary vehicle. Together they cover everything.</div></div></div></div>
+      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"What's the difference between a trust and a will — and do I need both?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>A will tells people what you want after you die — but it goes through probate court, which is public, slow (9–18 months), and expensive. A revocable living trust does the same job but bypasses probate entirely: assets transfer directly to your beneficiaries, privately, within days.</p><p>The short answer: for most families, yes — you need both. A pour-over will catches anything you didn't transfer into your trust during your lifetime; your trust handles the rest. If your estate is genuinely simple — no real estate, no children under 18, minimal assets — a will alone may be enough. But the cost of creating a trust you didn't strictly need is small. The cost of not having one when your family needs it is not.</p><div class="acc-hl"><strong>Bottom line:</strong> A will is your backstop. A trust is your primary vehicle. Together they cover everything — and GuardTies includes both.</div></div></div></div>
 
-      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"Do I actually need a trust, or is a will enough?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>If any of the following is true, a trust is worth it: you own real estate, you have children under 18, you have assets you want distributed in a specific way, or you value keeping your estate private. A trust bypasses probate — the public court process that ties up your estate and costs your family time and money at the worst possible moment.</p><p>If your estate is extremely simple — no real estate, no children, minimal assets — a will may be sufficient. But the cost of creating a trust that turns out to be unnecessary is small. The cost of not having one when your family needs it is not.</p></div></div></div>
+      <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"Does this replace hiring an attorney entirely?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>For the large majority of families — yes. GuardTies gives you the same structure, clauses, and execution requirements an attorney would draft, guided step by step, so you never have to book that appointment or pay by the hour.</p><p>Where it doesn't replace an attorney: genuinely complex situations — contested guardianship, multi-state business succession, or estates near the federal estate tax exemption. GuardTies is a complete legal template product, not personalized legal advice. If your situation is unusually complex, use it as your foundation and bring in a specialist only where you actually need one — most people never do.</p><div class="pills"><span class="pill">✓ Covers the large majority of families completely</span><span class="pill">✓ Flags where local counsel actually helps</span></div></div></div></div>
 
       <div class="acc-item"><div class="acc-q" role="button" tabindex="0" aria-expanded="false"><div class="acc-q-t">"Is a revocable trust flexible? Can I change it later?"</div><div class="acc-icon" aria-hidden="true">+</div></div><div class="acc-body"><div class="acc-body-inner"><p>Yes — completely. A revocable living trust can be changed, updated, or revoked at any time while you are alive and have legal capacity. Got divorced? Had another child? Bought a new property? Changed your mind about a beneficiary? You update it using the trust amendment form included in your package.</p><p>An irrevocable trust is different — once created, it generally cannot be changed. GuardTies provides revocable trusts, which is the right choice for the overwhelming majority of families. You are never locked in.</p><div class="pills"><span class="pill">✓ Revocable — change any time</span><span class="pill">✓ Trust amendment form included</span><span class="pill">✓ Annual review checklist included</span></div></div></div></div>
 
@@ -1774,6 +1789,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       <h2 class="close-h">Your family deserves better than<br>a decision made <em style="color:var(--sage-lt)">without your guidance.</em></h2>
       <p class="close-sub">Without a plan, probate court becomes public. Your estate becomes a process. Your family becomes a waiting room. GuardTies changes all of that — with a guided system so clear that anyone can finish it, and documents so complete that nothing gets left behind. <em>Start today. Your family’s privacy, security, and future are protected before the weekend is over.</em></p>
       <a href="#" class="btn-final" aria-label="Get my complete estate plan — plans from $499">Get my estate plan — from $499 <span aria-hidden="true">→</span></a>
+      <div class="pay-badges" aria-label="We accept Visa, Mastercard, American Express, and Apple Pay">
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><text x="16" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="700" font-style="italic" fill="#1A1F71" text-anchor="middle">VISA</text></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><circle cx="13" cy="10" r="6" fill="#EB001B"/><circle cx="19" cy="10" r="6" fill="#F79E1B" fill-opacity=".85"/></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#006FCF"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">AMEX</text></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#000"/><text x="16" y="13" font-family="-apple-system,Arial,sans-serif" font-size="7.5" font-weight="600" fill="#fff" text-anchor="middle">Pay</text></svg>
+      </div>
       <p class="close-micro">57 documents · Download in 24 hours · Guided step-by-step · 30-day guarantee · No subscription</p>
     </div>
     <div class="close-trust sr">
@@ -1852,7 +1873,9 @@ let sbDismissed=false;
 function checkSticky(){
   if(sbDismissed)return;
   const de=document.documentElement;
-  stickyBar.classList.toggle('visible',de.scrollTop>window.innerHeight*0.9);
+  const whoEl=document.getElementById('who');
+  const trigger=whoEl?whoEl.offsetTop:window.innerHeight*0.9;
+  stickyBar.classList.toggle('visible',de.scrollTop>trigger);
 }
 window.addEventListener('scroll',checkSticky,{passive:true});
 if(sbDismiss){sbDismiss.addEventListener('click',()=>{sbDismissed=true;stickyBar.classList.remove('visible');});}
