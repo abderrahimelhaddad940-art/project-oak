@@ -470,6 +470,17 @@ section{padding:88px 0}
 .pcmp-fill.us{width:14%;background:var(--sage-lt)}
 .pcmp-val{font-family:var(--serif);font-size:.94rem;font-weight:600;color:var(--white);white-space:nowrap}
 .pcmp-foot{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)}
+/* Itemised stack — each line is a document you'd otherwise pay for separately */
+.pstack{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.pstack-n{font-size:.8rem;color:rgba(255,255,255,.82)}
+.pstack-v{font-size:.8rem;color:rgba(255,255,255,.62);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pstack.total{border-bottom:none;border-top:1px solid rgba(255,255,255,.18);margin-top:6px;padding-top:13px}
+.pstack.total .pstack-n{font-size:.84rem;font-weight:600;color:rgba(255,255,255,.92)}
+.pstack.total .pstack-v{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:rgba(255,255,255,.92)}
+.pstack.ours{border-bottom:none;padding-top:11px}
+.pstack.ours .pstack-n{font-size:.84rem;font-weight:600;color:var(--sage-lt)}
+.pstack.ours .pstack-v{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--sage-lt)}
+.pstack-note{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:4px}
 /* Unit-cost framing inside each card */
 .pc-permath{font-size:.72rem;color:var(--sage);font-weight:600;margin:-8px 0 16px}
 /* Choice helper — the two tiers should never cause hesitation */
@@ -1565,18 +1576,28 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
 
     <div class="price-compare sr">
-      <div class="pcmp-lbl">What the same documents cost elsewhere</div>
-      <div class="pcmp-row">
-        <div class="pcmp-name">Estate attorney</div>
-        <div class="pcmp-track"><div class="pcmp-fill them"></div></div>
-        <div class="pcmp-val">$3,500–$10,000+</div>
+      <div class="pcmp-lbl">What you'd pay an attorney, document by document</div>
+
+      <div class="pstack"><div class="pstack-n">Revocable Living Trust</div><div class="pstack-v">$1,500–$3,000</div></div>
+      <div class="pstack"><div class="pstack-n">Pour-Over Will</div><div class="pstack-v">$300–$600</div></div>
+      <div class="pstack"><div class="pstack-n">Financial Power of Attorney</div><div class="pstack-v">$300–$900</div></div>
+      <div class="pstack"><div class="pstack-n">Healthcare Directive &amp; HIPAA</div><div class="pstack-v">$300–$600</div></div>
+      <div class="pstack"><div class="pstack-n">Trust funding &amp; deed preparation</div><div class="pstack-v">$150–$400</div></div>
+
+      <div class="pstack total">
+        <div class="pstack-n">Those five documents alone</div>
+        <div class="pstack-v">$2,550–$5,500</div>
       </div>
-      <div class="pcmp-row">
-        <div class="pcmp-name">GuardTies</div>
-        <div class="pcmp-track"><div class="pcmp-fill us"></div></div>
-        <div class="pcmp-val">$499</div>
+      <div class="pcmp-row" style="margin:12px 0 0"><div class="pcmp-name" style="font-size:.74rem;color:rgba(255,255,255,.6)">Attorney</div><div class="pcmp-track"><div class="pcmp-fill them"></div></div><div class="pcmp-val" style="font-size:.8rem;color:rgba(255,255,255,.7)">$2,550+</div></div>
+      <div class="pcmp-row" style="margin:0"><div class="pcmp-name" style="font-size:.74rem;color:rgba(255,255,255,.6)">GuardTies</div><div class="pcmp-track"><div class="pcmp-fill us" style="width:20%"></div></div><div class="pcmp-val" style="font-size:.8rem;color:var(--sage-lt)">$499</div></div>
+
+      <div class="pstack ours">
+        <div class="pstack-n">GuardTies — all 57 documents</div>
+        <div class="pstack-v">$499</div>
       </div>
-      <div class="pcmp-foot">A one-hour attorney consultation alone runs $250–$400 — and that's before a single document is drafted. You're paying roughly one to two hours of that time for all 57.</div>
+      <div class="pstack-note">And that comparison covers five documents. Your kit includes 57 — plus the estate tax planning, guardianship and legacy documents most firms bill separately.</div>
+
+      <div class="pcmp-foot">Ranges reflect published 2026 US attorney fee guides; actual cost varies by state and complexity. A one-hour consultation alone runs $250–$400 — before a single document is drafted.</div>
     </div>
 
     <div class="pricing-grid">
