@@ -293,7 +293,24 @@ section{padding:88px 0}
    WHAT YOU RECEIVE
 ════════════════════════════ */
 #receive{background:var(--linen-2)}
-.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:28px 0}
+.receive-reassure{display:flex;align-items:flex-start;gap:10px;background:var(--mint);border-radius:var(--r8);padding:12px 16px;margin:18px 0 26px;max-width:640px}
+.receive-reassure svg{width:16px;height:16px;stroke:var(--forest);fill:none;stroke-width:2.2;flex-shrink:0;margin-top:1px}
+.receive-reassure p{font-size:.8rem;color:var(--forest-2);line-height:1.55;font-weight:500}
+/* At-a-glance total — shows the buyer how 400+ pages breaks down, so the number isn't just asserted */
+.pages-glance{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r12);padding:20px 22px;margin-bottom:30px;max-width:520px}
+.pg-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:12px}
+.pg-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;border-bottom:1px solid var(--bdr)}
+.pg-label{font-size:.82rem;color:var(--ink-2)}
+.pg-val{font-size:.82rem;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pg-row.total{border-bottom:none;border-top:2px solid var(--forest);margin-top:2px;padding-top:12px}
+.pg-row.total .pg-label{font-weight:700;color:var(--ink)}
+.pg-row.total .pg-val{font-family:var(--serif);font-weight:600;color:var(--forest);font-size:1.05rem}
+.pg-extra{font-size:.74rem;color:var(--ink-3);margin-top:12px;line-height:1.6}
+/* Cluster labels — group the 7 pieces into 3 plain-English buckets */
+.doc-group{margin-bottom:26px}
+.doc-group-lbl{display:flex;align-items:center;gap:9px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--forest);margin-bottom:12px}
+.doc-group-lbl .dgn{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--forest);color:var(--white);font-family:var(--serif);font-size:.68rem;flex-shrink:0}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:0}
 .doc-section{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r12);padding:20px;transition:box-shadow .2s,transform .2s}
 .doc-section:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
 .doc-section.featured{border-color:var(--forest);border-width:2px}
@@ -1345,103 +1362,134 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   <div class="w">
     <div class="sr">
       <span class="eyebrow">What's inside</span>
-      <h2>400+ pages. Every piece of a complete estate plan — organized into 7 guided sections.</h2>
-      <p style="margin-top:12px;margin-bottom:28px;max-width:520px;color:var(--ink-3)">Every document is professionally drafted, fully editable in Word and PDF, and guided by plain-English notes.</p>
+      <h2>400+ pages, organized into 3 simple parts — so you're never guessing what to do next.</h2>
+      <p style="margin-top:12px;margin-bottom:0;max-width:560px;color:var(--ink-3)">Every page is professionally drafted, fully editable in Word and PDF, and explained in plain English. Here's exactly what lands in your inbox.</p>
+      <div class="receive-reassure">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p>You're not handed 400 pages and left to figure it out. Sections 2 and 3 below exist for one reason — to guide you through Section 1, step by step, in plain English.</p>
+      </div>
     </div>
-    <div class="docs-grid">
-      <div class="doc-section featured sr">
-        <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div class="ds-title">90-Page Revocable Living Trust</div>
-        <div class="ds-count">90 pages · 26 Articles</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>26 Articles of court-grade legal protection</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Adapts to real life, real families, real estate</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Revocable — amend or revoke any time</div>
+
+    <div class="pages-glance sr">
+      <div class="pg-lbl">How the 400+ pages break down</div>
+      <div class="pg-row"><div class="pg-label">Revocable Living Trust</div><div class="pg-val">90 pages</div></div>
+      <div class="pg-row"><div class="pg-label">Walkthrough Companion Guide</div><div class="pg-val">200 pages</div></div>
+      <div class="pg-row"><div class="pg-label">Post-Signing &amp; Trust Funding Guide</div><div class="pg-val">33 pages</div></div>
+      <div class="pg-row"><div class="pg-label">Essential Estate Documents</div><div class="pg-val">80+ pages</div></div>
+      <div class="pg-row total"><div class="pg-label">Total</div><div class="pg-val">400+ pages</div></div>
+      <div class="pg-extra">Plus the Customizable Schedules, Trust Finalization Toolkit, and Digital Vault Organizer that tie it all together.</div>
+    </div>
+
+    <div class="doc-group sr">
+      <div class="doc-group-lbl"><span class="dgn">1</span>The Core Document</div>
+      <div class="docs-grid">
+        <div class="doc-section featured">
+          <div class="ds-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="ds-title">90-Page Revocable Living Trust</div>
+          <div class="ds-count">90 pages · 26 Articles</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>26 Articles of court-grade legal protection</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Adapts to real life, real families, real estate</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Revocable — amend or revoke any time</div>
+          </div>
+          <div class="ds-note">The foundation your whole plan is built on — comprehensive enough for blended families, real estate, and multi-generational wealth transfer.</div>
         </div>
-        <div class="ds-note">The foundation your whole plan is built on — comprehensive enough for blended families, real estate, and multi-generational wealth transfer.</div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-clay"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
-        <div class="ds-title">Customizable Schedules A–K</div>
-        <div class="ds-count">11 schedules</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Real estate</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Financial accounts &amp; investments</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Digital access</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Charitable giving</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Guardianship</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Memorial wishes</div>
-        </div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-indigo"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <div class="ds-title">Trust Finalization &amp; Organizer Toolkit</div>
-        <div class="ds-count">8 tools included</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Certificate of trust</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Trustee acceptance forms — single + co-trustee</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Notary block</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Legacy letter prompt</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Post-signing trust funding checklist</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Trust &amp; legacy binder checklist</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Estate planning progress tracker</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Quick reference summary sheet</div>
-        </div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-plum"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div class="ds-title">200-Page Walkthrough Companion Guide</div>
-        <div class="ds-count">200 pages</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Article-by-article trust walkthrough — 119 pages</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>"What if" scenario companion — 40+ situations, 64 pages</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Trust completion checklist</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Estate planning FAQs made simple</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Legal glossary — terms made easy</div>
-        </div>
-        <div class="ds-note">Like having a lawyer beside you — every article explained in plain English before you sign anything.</div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-teal"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <div class="ds-title">33-Page Post-Signing &amp; Trust Funding Guide</div>
-        <div class="ds-count">33 pages</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Notary instructions for every document</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Funding walkthrough, asset by asset</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Common funding mistakes — and how to avoid them</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>How to transfer property</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Store &amp; share: legacy protection mini-guide</div>
-        </div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-rose"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
-        <div class="ds-title">80+ Pages of Essential Estate Documents</div>
-        <div class="ds-count">80+ pages · 10 documents</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Pour-over will</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Durable power of attorney — financial</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Medical power of attorney</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Advance health care directive</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>HIPAA authorization</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Digital asset authorization</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Parental power of attorney</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Agent guidance letters</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Emergency snapshot summaries</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Execution checklist + 50-state notary &amp; witness guide</div>
-        </div>
-      </div>
-      <div class="doc-section sr">
-        <div class="ds-icon c-gold"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div class="ds-title">Digital Vault &amp; Password Access Organizer</div>
-        <div class="ds-count">4 tools</div>
-        <div class="ds-docs">
-          <div class="ds-doc"><span class="ds-ok">✓</span>Password vault access card</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Digital asset inventory log</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Legacy letter template</div>
-          <div class="ds-doc"><span class="ds-ok">✓</span>Mini guide — how to store &amp; share securely</div>
+        <div class="doc-section">
+          <div class="ds-icon c-clay"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+          <div class="ds-title">Customizable Schedules A–K</div>
+          <div class="ds-count">11 schedules — attach to your trust</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Real estate</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Financial accounts &amp; investments</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Digital access</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Charitable giving</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Guardianship</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Memorial wishes</div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="doc-group sr">
+      <div class="doc-group-lbl"><span class="dgn">2</span>Your Step-by-Step Guidance</div>
+      <div class="docs-grid">
+        <div class="doc-section">
+          <div class="ds-icon c-plum"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <div class="ds-title">200-Page Walkthrough Companion Guide</div>
+          <div class="ds-count">200 pages</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Article-by-article trust walkthrough — 119 pages</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>"What if" scenario companion — 40+ situations, 64 pages</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Trust completion checklist</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Estate planning FAQs made simple</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Legal glossary — terms made easy</div>
+          </div>
+          <div class="ds-note">Like having a lawyer beside you — every article explained in plain English before you sign anything.</div>
+        </div>
+        <div class="doc-section">
+          <div class="ds-icon c-teal"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div class="ds-title">33-Page Post-Signing &amp; Trust Funding Guide</div>
+          <div class="ds-count">33 pages</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Notary instructions for every document</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Funding walkthrough, asset by asset</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Common funding mistakes — and how to avoid them</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>How to transfer property</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Store &amp; share: legacy protection mini-guide</div>
+          </div>
+        </div>
+        <div class="doc-section">
+          <div class="ds-icon c-indigo"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="ds-title">Trust Finalization &amp; Organizer Toolkit</div>
+          <div class="ds-count">8 tools — keeps you on track</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Certificate of trust</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Trustee acceptance forms — single + co-trustee</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Notary block</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Legacy letter prompt</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Post-signing trust funding checklist</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Trust &amp; legacy binder checklist</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Estate planning progress tracker</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Quick reference summary sheet</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="doc-group sr">
+      <div class="doc-group-lbl"><span class="dgn">3</span>Everything Else Your Family Needs</div>
+      <div class="docs-grid">
+        <div class="doc-section">
+          <div class="ds-icon c-rose"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
+          <div class="ds-title">80+ Pages of Essential Estate Documents</div>
+          <div class="ds-count">80+ pages · 10 documents</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Pour-over will</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Durable power of attorney — financial</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Medical power of attorney</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Advance health care directive</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>HIPAA authorization</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Digital asset authorization</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Parental power of attorney</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Agent guidance letters</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Emergency snapshot summaries</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Execution checklist + 50-state notary &amp; witness guide</div>
+          </div>
+        </div>
+        <div class="doc-section">
+          <div class="ds-icon c-gold"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="ds-title">Digital Vault &amp; Password Access Organizer</div>
+          <div class="ds-count">4 tools</div>
+          <div class="ds-docs">
+            <div class="ds-doc"><span class="ds-ok">✓</span>Password vault access card</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Digital asset inventory log</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Legacy letter template</div>
+            <div class="ds-doc"><span class="ds-ok">✓</span>Mini guide — how to store &amp; share securely</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="total-bar sr">
       <span class="tb-l">Attorney equivalent cost</span>
       <span class="tb-r" style="text-decoration:line-through;opacity:.55;font-size:1.1rem;margin-right:12px">$3,500–$10,000+</span>
