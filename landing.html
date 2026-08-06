@@ -408,14 +408,14 @@ section{padding:88px 0}
   font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
   padding:4px 12px;border-radius:var(--rpill);white-space:nowrap;
 }
-/* Bonus line — quiet left-rule callout, not a badge */
-.pc-sticker{
-  border-left:2px solid var(--gold);
-  padding:2px 0 2px 12px;margin-bottom:18px;
-}
-.pc-sticker-t{font-size:.73rem;font-weight:700;color:var(--ink)}
-.pc-sticker-t::before{content:'Bonus — ';color:#8A6A12;font-weight:700}
-.pc-sticker-d{font-size:.66rem;color:var(--ink-3);line-height:1.4;margin-top:1px}
+/* Bonus box — ribbon tag + text + icon, ecom product-page style */
+.pc-sticker{display:flex;align-items:stretch;background:var(--mint);border-radius:var(--r8);margin-bottom:18px;overflow:hidden}
+.pc-sticker-tag{flex-shrink:0;display:flex;align-items:center;background:var(--forest);color:var(--white);font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:0 20px 0 14px;clip-path:polygon(0 0,78% 0,100% 50%,78% 100%,0 100%)}
+.pc-sticker-body{flex:1;min-width:0;padding:10px 10px 10px 16px}
+.pc-sticker-t{font-size:.8rem;font-weight:700;color:var(--ink)}
+.pc-sticker-d{font-size:.7rem;color:var(--ink-3);margin-top:1px}
+.pc-sticker-icon{flex-shrink:0;display:flex;align-items:center;padding-right:14px}
+.pc-sticker-icon svg{width:22px;height:22px;stroke:var(--forest-2);fill:none;stroke-width:1.6}
 .pc-foot{margin-top:auto}
 @media(max-width:680px){
   .pricing-grid{grid-template-columns:1fr;gap:26px;max-width:420px}
@@ -931,8 +931,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       </div>
 
       <div class="pc-sticker">
-        <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-        <div class="pc-sticker-d">Included free — no extra cost</div>
+        <div class="pc-sticker-tag">Bonus</div>
+        <div class="pc-sticker-body">
+          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+          <div class="pc-sticker-d">Included free — no extra cost</div>
+        </div>
+        <div class="pc-sticker-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
       </div>
 
       <div class="pdp-trust-line"><span class="pdp-trust-dot" aria-hidden="true"></span><strong>Instant access:</strong>&nbsp;download link arrives within 24 hours of checkout.</div>
@@ -1639,8 +1643,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="pc-atty">Your complete estate plan, covering you.</div>
 
         <div class="pc-sticker">
-          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-          <div class="pc-sticker-d">Included free — no extra cost</div>
+          <div class="pc-sticker-tag">Bonus</div>
+          <div class="pc-sticker-body">
+            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+            <div class="pc-sticker-d">Included free — no extra cost</div>
+          </div>
+          <div class="pc-sticker-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
         </div>
 
         <div class="pc-includes">
@@ -1680,8 +1688,12 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="pc-atty">One complete estate plan covering both of you.</div>
 
         <div class="pc-sticker">
-          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-          <div class="pc-sticker-d">Included free — no extra cost</div>
+          <div class="pc-sticker-tag">Bonus</div>
+          <div class="pc-sticker-body">
+            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+            <div class="pc-sticker-d">Included free — no extra cost</div>
+          </div>
+          <div class="pc-sticker-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
         </div>
 
         <div class="pc-includes">
