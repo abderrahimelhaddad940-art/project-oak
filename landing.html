@@ -254,14 +254,7 @@ section{padding:88px 0}
 ════════════════════════════ */
 #kit{background:var(--linen);padding:76px 0}
 .kit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
-.kit-item{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--bdr);border-left:3px solid var(--bdr);border-radius:var(--r8);padding:12px 13px 12px 11px;transition:border-color .15s,transform .18s,box-shadow .18s}
-.kit-item:has(.c-blue){border-left-color:var(--acc-blue)}
-.kit-item:has(.c-clay){border-left-color:var(--acc-clay)}
-.kit-item:has(.c-rose){border-left-color:var(--acc-rose)}
-.kit-item:has(.c-teal){border-left-color:var(--acc-teal)}
-.kit-item:has(.c-plum){border-left-color:var(--acc-plum)}
-.kit-item:has(.c-indigo){border-left-color:var(--acc-indigo)}
-.kit-item:has(.c-gold){border-left-color:var(--gold)}
+.kit-item{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--bdr);border-radius:var(--r8);padding:12px 13px;transition:border-color .15s,transform .18s,box-shadow .18s}
 .kit-item:hover{border-color:var(--bdr-2);transform:translateY(-2px);box-shadow:var(--sh1)}
 .kit-ico{width:30px;height:30px;border-radius:var(--r8);background:var(--mint);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .kit-ico svg{width:15px;height:15px;stroke:var(--forest);fill:none;stroke-width:2}
@@ -326,8 +319,9 @@ section{padding:88px 0}
 .pg-extra{font-size:.74rem;color:var(--ink-3);margin-top:12px;line-height:1.6}
 /* Cluster labels — group the 7 pieces into 3 plain-English buckets */
 .doc-group{margin-bottom:26px}
-.doc-group-lbl{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--dg,var(--forest));background:var(--dg-bg,var(--mint));padding:6px 14px 6px 6px;border-radius:var(--rpill);margin-bottom:14px}
-.doc-group-lbl .dgn{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--dg,var(--forest));color:var(--white);font-family:var(--serif);font-size:.7rem;flex-shrink:0}
+.doc-group-lbl{display:flex;align-items:baseline;gap:8px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--dg,var(--forest));margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid var(--dg,var(--forest))}
+.doc-group-lbl .dgn{font-family:var(--serif);font-size:.9rem;font-weight:600}
+.doc-group-lbl .dgn::after{content:'.'}
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:0}
 .doc-section{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r12);padding:20px;transition:box-shadow .2s,transform .2s}
 .doc-section:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
@@ -414,22 +408,13 @@ section{padding:88px 0}
   font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
   padding:4px 12px;border-radius:var(--rpill);white-space:nowrap;
 }
-/* Bonus "sticker" — a tilted seal so it reads as something stuck on the card */
+/* Bonus line — quiet left-rule callout, not a badge */
 .pc-sticker{
-  display:flex;align-items:center;gap:9px;
-  background:var(--gold-bg);border:1.5px dashed rgba(212,160,23,.55);
-  border-radius:var(--r8);padding:9px 12px;margin-bottom:18px;
+  border-left:2px solid var(--gold);
+  padding:2px 0 2px 12px;margin-bottom:18px;
 }
-.pc-sticker-seal{
-  flex-shrink:0;width:38px;height:38px;border-radius:50%;
-  background:var(--gold);color:#3D2C05;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-weight:800;line-height:1;transform:rotate(-9deg);
-  box-shadow:0 2px 6px rgba(212,160,23,.4);
-}
-.pc-sticker-seal .s1{font-size:.52rem;letter-spacing:.04em}
-.pc-sticker-seal .s2{font-size:.46rem;letter-spacing:.06em;margin-top:1px}
-.pc-sticker-t{font-size:.73rem;font-weight:700;color:#7A5C0C;line-height:1.3}
+.pc-sticker-t{font-size:.73rem;font-weight:700;color:var(--ink)}
+.pc-sticker-t::before{content:'Bonus — ';color:#8A6A12;font-weight:700}
 .pc-sticker-d{font-size:.66rem;color:var(--ink-3);line-height:1.4;margin-top:1px}
 .pc-foot{margin-top:auto}
 @media(max-width:680px){
@@ -550,13 +535,6 @@ section{padding:88px 0}
 .acc-hl{background:var(--mint);border-radius:var(--r6);padding:10px 13px;margin-top:10px;font-size:.79rem;color:var(--forest);line-height:1.6;border-left:2px solid var(--sage)}
 .pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
 .pill{font-size:.68rem;color:var(--forest);background:var(--mint);padding:3px 9px;border-radius:var(--rpill);font-weight:500}
-/* Cycle through the categorical accents so tag groups read as colorful, not monochrome */
-.pills .pill:nth-child(6n+1){color:var(--acc-blue);background:var(--acc-blue-bg)}
-.pills .pill:nth-child(6n+2){color:var(--acc-clay);background:var(--acc-clay-bg)}
-.pills .pill:nth-child(6n+3){color:var(--acc-rose);background:var(--acc-rose-bg)}
-.pills .pill:nth-child(6n+4){color:var(--acc-teal);background:var(--acc-teal-bg)}
-.pills .pill:nth-child(6n+5){color:var(--acc-plum);background:var(--acc-plum-bg)}
-.pills .pill:nth-child(6n+6){color:var(--acc-indigo);background:var(--acc-indigo-bg)}
 
 /* ════════════════════════════
    REVIEWS
@@ -908,7 +886,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 
     <!-- ── Buy box ── -->
     <div class="pdp-info sr">
-      <span class="eyebrow">Estate Planning Kit</span>
       <h1 class="pdp-title">GuardTies&trade; Complete Estate Planning Package</h1>
       <p class="pdp-tagline">Give your family the gift of clarity.</p>
 
@@ -954,11 +931,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
       </div>
 
       <div class="pc-sticker">
-        <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
-        <div>
-          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-          <div class="pc-sticker-d">Included free — no extra cost</div>
-        </div>
+        <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+        <div class="pc-sticker-d">Included free — no extra cost</div>
       </div>
 
       <div class="pdp-trust-line"><span class="pdp-trust-dot" aria-hidden="true"></span><strong>Instant access:</strong>&nbsp;download link arrives within 24 hours of checkout.</div>
@@ -1068,7 +1042,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="kit">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">What's in the kit</span>
       <h2>400+ pages of estate planning protection —<br>including every document you came looking for.</h2>
       <p style="margin-top:12px;max-width:560px;color:var(--ink-3)">Living trust, last will, powers of attorney, healthcare directives and more. Every document is editable, professionally drafted, and yours permanently.</p>
     </div>
@@ -1111,7 +1084,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="who">
   <div class="w">
     <div class="sr" style="text-align:center">
-      <span class="eyebrow" style="justify-content:center">Who it's for</span>
       <h2>Who is GuardTies for?</h2>
       <p style="margin:8px auto 0;max-width:500px;color:var(--ink-3)">Which one sounds like you?</p>
     </div>
@@ -1200,7 +1172,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="why" style="background:var(--peach);padding:88px 0">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">Why this matters now</span>
       <h2>Without a plan, the average family loses<br><em style="color:var(--forest-2)">over $50,000</em> — and that's the ones who avoid probate.</h2>
       <p style="margin-top:14px;max-width:540px;color:var(--ink-3)">Court fees, attorney fees, months of delays, assets distributed to the wrong people at the wrong time. The reason it hasn't happened isn't carelessness — it's that every option felt too expensive, too complicated, or impossible to finish. GuardTies removes every one of those barriers.</p>
     </div>
@@ -1299,7 +1270,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="myths" style="background:var(--sky);padding:88px 0">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">Common myths</span>
       <h2>5 beliefs that are keeping your family<br>unprotected right now.</h2>
       <p style="margin-top:14px;max-width:520px;color:var(--ink-3)">These aren't edge cases. They are the exact thoughts that have delayed estate planning for millions of Americans — including, probably, you. Each one is false. Here's the truth.</p>
     </div>
@@ -1353,7 +1323,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="how" style="background:var(--white)">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">How it works</span>
       <h2>Simple. Guided. Done in a weekend.</h2>
     </div>
     <div class="process-grid sr">
@@ -1386,7 +1355,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="receive">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">What's inside</span>
       <h2>400+ pages, organized into 3 simple parts — so you're never guessing what to do next.</h2>
       <p style="margin-top:12px;margin-bottom:0;max-width:560px;color:var(--ink-3)">Every page is professionally drafted, fully editable in Word and PDF, and explained in plain English. Here's exactly what lands in your inbox.</p>
       <div class="receive-reassure">
@@ -1436,7 +1404,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
 
     <div class="doc-group sr">
-      <div class="doc-group-lbl" style="--dg:var(--acc-teal);--dg-bg:var(--acc-teal-bg)"><span class="dgn">2</span>Your Step-by-Step Guidance</div>
+      <div class="doc-group-lbl" style="--dg:var(--acc-teal)"><span class="dgn">2</span>Your Step-by-Step Guidance</div>
       <div class="docs-grid">
         <div class="doc-section">
           <div class="ds-icon c-plum"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
@@ -1482,7 +1450,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     </div>
 
     <div class="doc-group sr">
-      <div class="doc-group-lbl" style="--dg:var(--acc-clay);--dg-bg:var(--acc-clay-bg)"><span class="dgn">3</span>Everything Else Your Family Needs</div>
+      <div class="doc-group-lbl" style="--dg:var(--acc-clay)"><span class="dgn">3</span>Everything Else Your Family Needs</div>
       <div class="docs-grid">
         <div class="doc-section">
           <div class="ds-icon c-rose"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
@@ -1530,7 +1498,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="compare">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">How we compare</span>
     </div>
     <div class="cmp-table sr">
       <div class="cmp-col us">
@@ -1572,7 +1539,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="reviews">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">What families say</span>
       <h2>Real people. Real plans.<br>Finally done.</h2>
 
     </div>
@@ -1630,7 +1596,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="pricing">
   <div class="w">
     <div class="sr" style="text-align:center;margin-bottom:0">
-      <span class="eyebrow" style="justify-content:center">Pricing</span>
       <h2 style="color:var(--white)">Two plans. One flat price each.<br>Everything your family needs.</h2>
       <p style="margin:12px auto 0;max-width:480px;color:rgba(255,255,255,.75);font-size:.9rem">Same complete system either way — choose the one that matches your household.</p>
     </div>
@@ -1674,11 +1639,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="pc-atty">Your complete estate plan, covering you.</div>
 
         <div class="pc-sticker">
-          <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
-          <div>
-            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-            <div class="pc-sticker-d">Included free — no extra cost</div>
-          </div>
+          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+          <div class="pc-sticker-d">Included free — no extra cost</div>
         </div>
 
         <div class="pc-includes">
@@ -1718,11 +1680,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
         <div class="pc-atty">One complete estate plan covering both of you.</div>
 
         <div class="pc-sticker">
-          <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
-          <div>
-            <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
-            <div class="pc-sticker-d">Included free — no extra cost</div>
-          </div>
+          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+          <div class="pc-sticker-d">Included free — no extra cost</div>
         </div>
 
         <div class="pc-includes">
@@ -1792,7 +1751,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <section id="faqs">
   <div class="w">
     <div class="sr">
-      <span class="eyebrow">Common questions</span>
       <h2>The real hesitations —<br>answered directly.</h2>
       <p style="margin-top:12px;margin-bottom:24px;max-width:500px;color:var(--ink-3)">Not hand-picked softballs. The questions that keep people from protecting their families.</p>
     </div>
