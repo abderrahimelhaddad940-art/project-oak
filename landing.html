@@ -174,7 +174,8 @@ section{padding:88px 0}
 .pdp-stars{display:flex;gap:2px}
 .pdp-star{width:14px;height:14px;fill:var(--gold);flex-shrink:0}
 .pdp-rating a{font-size:.8rem;color:var(--forest);font-weight:600;text-decoration:underline;text-underline-offset:2px}
-.pdp-title{margin-bottom:14px;max-width:520px}
+.pdp-title{font-size:clamp(1.7rem,2.6vw,2.15rem);margin-bottom:8px;max-width:480px}
+.pdp-tagline{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--sage);margin-bottom:16px;max-width:480px}
 
 .pdp-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
 .pdp-price{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--forest);line-height:1}
@@ -646,7 +647,6 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .pdp-thumbs{max-width:420px;margin-left:auto;margin-right:auto}
 }
 @media(max-width:680px){
-  .pdp-title{font-size:1.7rem}
   .pdp-price{font-size:2.2rem}
   .pdp-var-grid{grid-template-columns:1fr}
 }
@@ -867,7 +867,8 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
     <!-- ── Buy box ── -->
     <div class="pdp-info sr">
       <span class="eyebrow">Estate Planning Kit</span>
-      <h1 class="pdp-title">Give your family the gift of clarity.</h1>
+      <h1 class="pdp-title">GuardTies&trade; Complete Estate Planning Package</h1>
+      <p class="pdp-tagline">Give your family the gift of clarity.</p>
 
       <div class="pdp-rating">
         <div class="pdp-stars" role="img" aria-label="4.9 out of 5 stars">
