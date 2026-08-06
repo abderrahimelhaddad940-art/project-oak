@@ -126,41 +126,35 @@ section{padding:88px 0}
 .sr.d1{transition-delay:.08s}.sr.d2{transition-delay:.16s}.sr.d3{transition-delay:.24s}
 
 /* ════════════════════════════
-   HERO — forest green, centered
+   PROMO BAR — thin trust strip above nav
 ════════════════════════════ */
-#hero{background:var(--forest);padding:80px 0 72px;position:relative;overflow:hidden}
-/* Subtle texture — large background text */
-#hero::before{
-  content:'GuardTies';
-  position:absolute;left:50%;bottom:-1.5rem;transform:translateX(-50%);
-  font-family:var(--serif);font-size:clamp(5rem,13vw,10rem);
-  font-weight:600;color:rgba(255,255,255,.04);
-  line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em;
-  white-space:nowrap;
-}
-.hero-inner{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;text-align:left}
-.hero-copy{min-width:0}
+#promo{background:var(--forest);padding:9px 0;text-align:center}
+.promo-txt{font-size:.72rem;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.03em}
 
-/* ── Hero photo ── */
-.hero-media{position:relative}
-.hero-photo-card{position:relative;border-radius:var(--r24);overflow:hidden;box-shadow:var(--sh3);aspect-ratio:4/5;background:var(--forest-2)}
-.hero-photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+/* ════════════════════════════
+   PDP — product-page style hero: gallery + buy box
+════════════════════════════ */
+#pdp{background:var(--linen);padding:40px 0 64px}
+.pdp-grid{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 
-/* ── THE SIGNATURE ELEMENT: instant access badge ── */
+/* ── Gallery ── */
+.pdp-gallery{position:relative;min-width:0}
+.pdp-main{position:relative;border-radius:var(--r16);overflow:hidden;border:1px solid var(--bdr);aspect-ratio:1/1;background:var(--linen-2)}
+.pdp-main img{width:100%;height:100%;object-fit:cover;display:block}
+.pdp-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;padding:2px}
+.pdp-thumb{flex:0 0 auto;width:72px;height:72px;border-radius:10px;overflow:hidden;border:2px solid var(--bdr);cursor:pointer;padding:0;background:none;transition:border-color .15s}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pdp-thumb:hover{border-color:var(--bdr-2)}
+.pdp-thumb.active{border-color:var(--forest)}
+
+/* ── THE SIGNATURE ELEMENT: instant access badge, overlaid on main image ── */
 .delivery-badge{
   display:inline-flex;flex-direction:column;align-items:center;
-  width:120px;height:120px;border-radius:50%;
-  background:rgba(255,255,255,.07);
-  border:1.5px solid rgba(255,255,255,.18);
-  justify-content:center;gap:2px;
-  margin:0 auto 32px;
-  position:relative;
-}
-/* Overlaid on the hero photo card instead of centered above the headline */
-.hero-media .delivery-badge{
-  position:absolute;bottom:-22px;left:-22px;margin:0;
+  width:96px;height:96px;border-radius:50%;
   background:var(--forest);border:3px solid var(--linen);
-  box-shadow:0 10px 28px rgba(0,0,0,.3);z-index:2;
+  justify-content:center;gap:2px;
+  position:absolute;bottom:-16px;left:-16px;z-index:2;
+  box-shadow:0 10px 28px rgba(0,0,0,.25);
 }
 /* Subtle sweep ring animation */
 .delivery-badge::after{
@@ -171,52 +165,38 @@ section{padding:88px 0}
   animation:sweep 3s linear infinite;
 }
 @keyframes sweep{to{transform:rotate(360deg)}}
-.db-number{font-family:var(--serif);font-size:2.8rem;font-weight:600;color:var(--white);line-height:1}
-.db-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.75)}
+.db-number{font-family:var(--serif);font-size:2.1rem;font-weight:600;color:var(--white);line-height:1}
+.db-label{font-size:.52rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.75)}
 
-/* Social proof */
-.hero-proof{display:flex;align-items:center;justify-content:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-.hp-stars{display:flex;gap:2px}
-.hp-star{width:13px;height:13px;fill:var(--gold-lt);flex-shrink:0}
-.hp-txt{font-size:.76rem;color:rgba(255,255,255,.75)}
-.hp-txt strong{color:rgba(255,255,255,.85);font-weight:500}
-.hp-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+/* ── Buy box ── */
+.pdp-info{min-width:0}
+.pdp-rating{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.pdp-stars{display:flex;gap:2px}
+.pdp-star{width:14px;height:14px;fill:var(--gold);flex-shrink:0}
+.pdp-rating a{font-size:.8rem;color:var(--forest);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.pdp-title{margin-bottom:14px;max-width:520px}
 
-/* Hero headline */
-.hero-h{color:var(--white);margin-bottom:18px;max-width:560px}
-.hero-h .ital{font-style:italic;color:var(--sage-lt)}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.78;max-width:480px;margin:0 0 32px}
+.pdp-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.pdp-price{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--forest);line-height:1}
+.pdp-price-note{font-size:.85rem;color:var(--ink-3)}
+.pdp-anchor{font-size:.85rem;color:var(--ink-2);margin-bottom:24px}
+.pdp-anchor strong{color:var(--forest);font-weight:600}
 
-/* Trust pills */
-.hero-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-start;margin-bottom:36px}
-.hp{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.75);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--rpill);padding:5px 12px}
-/* Lighter than --sage-lt: on the pill's translucent background that token only
-   reaches 4.29:1, just under AA. This hits 4.78:1. */
-.hp-ok{color:#84CFA9;font-weight:700}
+.pdp-variants{margin-bottom:22px}
+.pdp-var-label{font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.pdp-var-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pdp-var-btn{border:1.5px solid var(--bdr-2);border-radius:var(--r8);padding:11px 14px;background:var(--white);cursor:pointer;text-align:left;transition:border-color .15s,background .15s}
+.pdp-var-btn:hover{border-color:var(--forest-2)}
+.pdp-var-btn.active{border-color:var(--forest);background:var(--mint)}
+.pdp-var-name{font-size:.84rem;font-weight:700;color:var(--ink)}
+.pdp-var-price{font-size:.76rem;color:var(--ink-3);margin-top:2px}
+.pdp-var-btn.active .pdp-var-price{color:var(--forest-2)}
 
-/* Hero CTA group */
-.hero-cta-group{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.btn-primary{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  height:56px;padding:0 36px;
-  background:var(--white);color:var(--forest);
-  border:none;border-radius:var(--rpill);
-  font-family:var(--sans);font-size:1rem;font-weight:600;
-  cursor:pointer;letter-spacing:.01em;
-  box-shadow:0 4px 24px rgba(0,0,0,.2);
-  transition:background .15s,transform .12s,box-shadow .15s;
-  text-decoration:none;
-}
-.btn-primary:hover{background:var(--mint);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.25)}
-.btn-arr{transition:transform .18s;flex-shrink:0}
-.btn-primary:hover .btn-arr{transform:translateX(4px)}
-.hero-cta-note{font-size:.72rem;color:rgba(255,255,255,.75);letter-spacing:.01em}
+.pdp-trust-line{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--ink-2);margin-bottom:20px}
+.pdp-trust-dot{width:8px;height:8px;border-radius:50%;background:var(--forest);flex-shrink:0}
+.pdp-trust-line strong{color:var(--ink);font-weight:600}
 
-/* Hero stats */
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:var(--r12);overflow:hidden;margin-top:48px;max-width:560px}
-.hstat{background:rgba(255,255,255,.04);padding:16px 8px;text-align:center}
-.hstat-n{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--white);line-height:1}
-.hstat-l{font-size:.6rem;color:rgba(255,255,255,.75);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.pdp-guarantee-line{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
 
 /* ════════════════════════════
    REVIEW MARQUEE — infinite loop
@@ -631,11 +611,11 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
    RESPONSIVE
 ════════════════════════════ */
 @media(max-width:680px){
-  .hero-inner,.close-inner,.founder-inner{padding-left:20px;padding-right:20px}
+  .close-inner,.founder-inner{padding-left:20px;padding-right:20px}
+  .pdp-grid{padding:0 20px}
   .w{padding:0 20px}
   section{padding:64px 0}
   h1{font-size:clamp(2rem,7vw,2.8rem)}
-  .hero-stats{grid-template-columns:repeat(2,1fr);max-width:none}
   .process-grid{grid-template-columns:1fr}
   .process-step{border-right:none;border-bottom:1px solid var(--bdr)}
   .process-step:last-child{border-bottom:none}
@@ -658,50 +638,17 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .who-grid{grid-template-columns:1fr}
   .who-card{height:220px}
 }
-@media(max-width:980px){
-  /* Single column. display:contents flattens .hero-copy so the photo can be
-     ordered between the headline and the body copy instead of after all of it. */
-  .hero-inner{display:flex;flex-direction:column;gap:0;text-align:center}
-  .hero-copy{display:contents}
-  /* hook -> explain -> show -> act -> reassure: photo lands above the fold
-     without pushing the CTA below it */
-  .hero-proof{order:1;justify-content:center}
-  .hero-h{order:2}
-  /* The keyword subhead is long; tighten it on every phone, not just short ones */
-  .hero-sub{order:3;margin-bottom:16px;font-size:.98rem;line-height:1.6}
-  .hero-media{order:4;width:100%;max-width:300px;margin:0 auto 20px}
-  .hero-cta-group{order:5;align-items:center}
-  .hero-pills{order:6;justify-content:center;margin-top:26px;margin-bottom:0}
-  .hero-stats{order:7;margin-left:auto;margin-right:auto;margin-top:26px}
-  .hero-h,.hero-sub{margin-left:auto;margin-right:auto}
-  /* Square crop: 3/2 pushed his smile to 97% of the card, under the badge; 4/5
-     cleared it but put the CTA below the fold. 1/1 with the crop nudged down
-     keeps his face intact and the CTA visible. */
-  .hero-photo-card{aspect-ratio:1/1}
-  .hero-photo-card img{object-position:50% 65%}
-  /* Scaled to match the desktop proportion so the badge clears his mouth */
-  .hero-media .delivery-badge{width:72px;height:72px;bottom:-12px;left:-10px;border-width:2.5px}
-  .hero-media .db-number{font-size:1.6rem}
-  .hero-media .db-label{font-size:.5rem;letter-spacing:.1em}
+@media(max-width:900px){
+  /* Single column: gallery stacks above the buy box, matching a mobile PDP */
+  .pdp-grid{grid-template-columns:1fr;gap:28px}
+  #pdp{padding:24px 0 48px}
+  .pdp-main{max-width:420px;margin:0 auto}
+  .pdp-thumbs{max-width:420px;margin-left:auto;margin-right:auto}
 }
-/* Short viewports (iPhone SE, older Androids, phones in landscape). The square
-   crop is 116px taller than the landscape one it replaced, which pushed the CTA
-   under the fold here. Tighten the vertical rhythm and cap the photo so the CTA
-   comes back up; the badge scales with it to keep clearing his mouth. */
-@media(max-width:980px) and (max-height:740px){
-  #hero{padding:30px 0 36px}
-  .hero-h{font-size:1.8rem}
-  .hero-proof{margin-bottom:10px}
-  .hero-h{margin-bottom:10px}
-  .hero-sub{margin-bottom:10px}
-  /* The keyword subhead runs ~4 lines here, so tighten it rather than cut it */
-  .hero-sub{font-size:1rem;line-height:1.62}
-  .hero-media{max-width:210px;margin-bottom:8px}
-  .hero-media .delivery-badge{width:50px;height:50px;bottom:-9px;left:-8px;border-width:2px}
-  .hero-media .db-number{font-size:1.1rem}
-  .hero-media .db-label{font-size:.4rem;letter-spacing:.06em}
-  .hero-pills{margin-top:18px}
-  .hero-stats{margin-top:18px}
+@media(max-width:680px){
+  .pdp-title{font-size:1.7rem}
+  .pdp-price{font-size:2.2rem}
+  .pdp-var-grid{grid-template-columns:1fr}
 }
 @media(max-width:400px){
   .cta-full{display:none}
@@ -713,7 +660,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
   .sb-price{font-size:1.05rem}
 }
 @media(prefers-reduced-motion:reduce){
-  .sr,.btn-primary,.pc-btn,.btn-final{transition:background .15s}
+  .sr,.pc-btn,.btn-final{transition:background .15s}
   .sr{opacity:1;transform:none}
   .delivery-badge::after{animation:none}
   html{scroll-behavior:auto}
@@ -878,6 +825,7 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 <div id="pb" aria-hidden="true"></div>
 
 <!-- NAV -->
+<div id="promo"><p class="promo-txt">★ 4.9/5 FROM 85 FAMILIES · ONE-TIME PAYMENT · 30-DAY MONEY-BACK GUARANTEE</p></div>
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-w">
     <a href="#" class="logo" aria-label="GuardTies — return to top">
@@ -890,66 +838,99 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 
 <main>
 <!-- ════ HERO ════ -->
-<section id="hero" aria-label="Hero">
-  <div class="hero-inner">
+<section id="pdp" aria-label="Product">
+  <div class="pdp-grid">
 
-    <div class="hero-copy">
-
-      <div class="hero-proof sr">
-        <div class="hp-stars" role="img" aria-label="5 stars">
-          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
-          <svg class="hp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+    <!-- ── Gallery ── -->
+    <div class="pdp-gallery sr">
+      <div class="pdp-main">
+        <picture>
+          <source id="pdp-main-src" srcset="/assets/hero-photo.webp" type="image/webp">
+          <img id="pdp-main-img" src="/assets/hero-photo.jpg" width="1000" height="1000" alt="A father embracing his young daughter, a warm candid moment representing the family GuardTies helps protect" loading="eager" fetchpriority="high">
+        </picture>
+        <div class="delivery-badge" aria-label="Download in 24 hours — one-time payment">
+          <div class="db-number">24h</div>
+          <div class="db-label">Delivery</div>
         </div>
-        <div class="hp-txt"><strong>4.9 / 5</strong></div>
-        <div class="hp-sep" aria-hidden="true"></div>
-        <div class="hp-txt">from 85 reviews</div>
-        <div class="hp-sep" aria-hidden="true"></div>
-        <div class="hp-txt">Trusted by <strong>1,470+ customers</strong></div>
       </div>
-
-      <h1 class="hero-h sr">Give your family<br>the gift of clarity.</h1>
-
-      <p class="hero-sub sr">A complete <strong style="color:var(--white);font-weight:600">Estate Planning Kit</strong> — Revocable Living Trust, Last Will &amp; Testament, Power of Attorney, Healthcare Directive and <strong style="color:var(--white);font-weight:600">57 professionally drafted legal templates</strong>.</p>
-
-      <div class="hero-pills sr">
-        <div class="hp"><span class="hp-ok">✓</span>Skip probate entirely</div>
-        <div class="hp"><span class="hp-ok">✓</span>Keep your estate private</div>
-        <div class="hp"><span class="hp-ok">✓</span>You control who gets what and when</div>
-        <div class="hp"><span class="hp-ok">✓</span>Step-by-step confidence guide</div>
-        <div class="hp"><span class="hp-ok">✓</span>Work at your pace — update anytime</div>
-        <div class="hp"><span class="hp-ok">✓</span>30-day guarantee</div>
+      <div class="pdp-thumbs" role="list" aria-label="Product photos">
+        <button type="button" class="pdp-thumb active" role="listitem" aria-label="Show photo 1" data-jpg="/assets/hero-photo.jpg" data-webp="/assets/hero-photo.webp" data-alt="A father embracing his young daughter, a warm candid moment representing the family GuardTies helps protect"><img src="/assets/hero-photo.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 2" data-jpg="/assets/who-new-parent.jpg" data-webp="/assets/who-new-parent.webp" data-alt="A new parent holding their infant's foot, a tender moment representing the family GuardTies helps protect"><img src="/assets/who-new-parent.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 3" data-jpg="/assets/who-homeowner.jpg" data-webp="/assets/who-homeowner.webp" data-alt="A new homeowner holding a house-shaped keychain with their front door keys"><img src="/assets/who-homeowner.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 4" data-jpg="/assets/who-blended-family.jpg" data-webp="/assets/who-blended-family.webp" data-alt="A multi-generational blended family gathered together at an outdoor evening get-together"><img src="/assets/who-blended-family.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 5" data-jpg="/assets/who-procrastinator.jpg" data-webp="/assets/who-procrastinator.webp" data-alt="A man relaxed on a couch working on a laptop, putting off a task for later"><img src="/assets/who-procrastinator.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 6" data-jpg="/assets/who-almost-done.jpg" data-webp="/assets/who-almost-done.webp" data-alt="An alarm clock placed on a laptop, a reminder of an estate plan that's been left unfinished"><img src="/assets/who-almost-done.jpg" width="72" height="72" alt="" loading="lazy"></button>
+        <button type="button" class="pdp-thumb" role="listitem" aria-label="Show photo 7" data-jpg="/assets/who-wealth-builder.jpg" data-webp="/assets/who-wealth-builder.webp" data-alt="A businessman in a suit working on his laptop, managing his wealth and assets"><img src="/assets/who-wealth-builder.jpg" width="72" height="72" alt="" loading="lazy"></button>
       </div>
-
-      <div class="hero-cta-group sr">
-        <a href="#pricing" class="btn-primary" aria-label="Get your complete estate plan — plans from $499">
-          Get my complete estate plan <span class="btn-arr" aria-hidden="true">→</span>
-        </a>
-        <div class="hero-cta-note">One-time payment · Download in 24 hours · No subscription</div>
-      </div>
-
-      <div class="hero-stats sr" role="list">
-        <div class="hstat" role="listitem"><div class="hstat-n">57</div><div class="hstat-l">Documents</div></div>
-        <div class="hstat" role="listitem"><div class="hstat-n">1 wknd</div><div class="hstat-l">Typical finish</div></div>
-        <div class="hstat" role="listitem"><div class="hstat-n">8</div><div class="hstat-l">Guided sections</div></div>
-        <div class="hstat" role="listitem"><div class="hstat-n">$10,000+</div><div class="hstat-l">Saved</div></div>
-      </div>
-
     </div>
 
-    <div class="hero-media sr">
-      <div class="hero-photo-card">
-        <picture>
-          <source srcset="/assets/hero-photo.webp" type="image/webp">
-          <img src="/assets/hero-photo.jpg" width="1000" height="1250" alt="A father embracing his young daughter, a warm candid moment representing the family GuardTies helps protect" loading="eager" fetchpriority="high">
-        </picture>
+    <!-- ── Buy box ── -->
+    <div class="pdp-info sr">
+      <span class="eyebrow">Estate Planning Kit</span>
+      <h1 class="pdp-title">Give your family the gift of clarity.</h1>
+
+      <div class="pdp-rating">
+        <div class="pdp-stars" role="img" aria-label="4.9 out of 5 stars">
+          <svg class="pdp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="pdp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="pdp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="pdp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg class="pdp-star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.7l-3.8 2.1.7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <a href="#reviews">4.9 / 5 · 85 reviews</a>
       </div>
-      <!-- THE SIGNATURE ELEMENT: Download in 24 hours badge, overlaid on the photo -->
-      <div class="delivery-badge" aria-label="Download in 24 hours — one-time payment">
-        <div class="db-number">24h</div>
-        <div class="db-label">Delivery</div>
+
+      <div class="pdp-price-row">
+        <div class="pdp-price" id="pdp-price">$499</div>
+        <div class="pdp-price-note">one-time payment</div>
+      </div>
+      <div class="pdp-anchor" id="pdp-anchor">vs. <strong>$3,500–$10,000+</strong> at a local law firm</div>
+
+      <div class="pdp-variants">
+        <div class="pdp-var-label">Choose your plan</div>
+        <div class="pdp-var-grid">
+          <button type="button" class="pdp-var-btn active" id="pdp-var-individual" aria-pressed="true">
+            <div class="pdp-var-name">Individual</div>
+            <div class="pdp-var-price">$499 · one person</div>
+          </button>
+          <button type="button" class="pdp-var-btn" id="pdp-var-couple" aria-pressed="false">
+            <div class="pdp-var-name">Couple</div>
+            <div class="pdp-var-price">$599 · both partners</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="pc-includes">
+        <div class="pc-inc-lbl">What you get</div>
+        <div class="pc-inc-grid">
+          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>57 drafted documents</div>
+          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Download within 24 hours</div>
+          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>Skip probate entirely</div>
+          <div class="pc-inc-item"><span class="pc-inc-ok">✓</span>All 50 states · Word + PDF</div>
+        </div>
+      </div>
+
+      <div class="pc-sticker">
+        <div class="pc-sticker-seal" aria-hidden="true"><span class="s1">FREE</span><span class="s2">BONUS</span></div>
+        <div>
+          <div class="pc-sticker-t">Bypass Estate Tax Savings Guide</div>
+          <div class="pc-sticker-d">Included free — no extra cost</div>
+        </div>
+      </div>
+
+      <div class="pdp-trust-line"><span class="pdp-trust-dot" aria-hidden="true"></span><strong>Instant access:</strong>&nbsp;download link arrives within 24 hours of checkout.</div>
+
+      <a href="#pricing" class="pc-btn" id="pdp-cta-btn" aria-label="Get my estate plan — $499">Get my estate plan — $499 <span aria-hidden="true">→</span></a>
+      <div class="pay-badges" aria-label="We accept Visa, Mastercard, American Express, and Apple Pay">
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><text x="16" y="14" font-family="Arial, sans-serif" font-size="9" font-weight="700" font-style="italic" fill="#1A1F71" text-anchor="middle">VISA</text></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#fff" stroke="#E5E7EB"/><circle cx="13" cy="10" r="6" fill="#EB001B"/><circle cx="19" cy="10" r="6" fill="#F79E1B" fill-opacity=".85"/></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#006FCF"/><text x="16" y="13" font-family="Arial, sans-serif" font-size="7" font-weight="700" fill="#fff" text-anchor="middle">AMEX</text></svg>
+        <svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><rect width="32" height="20" rx="3" fill="#000"/><text x="16" y="13" font-family="-apple-system,Arial,sans-serif" font-size="7.5" font-weight="600" fill="#fff" text-anchor="middle">Pay</text></svg>
+      </div>
+
+      <div class="pdp-guarantee-line">
+        <div class="pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-day money-back guarantee</div>
+        <div class="pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure checkout</div>
       </div>
     </div>
 
@@ -1874,6 +1855,44 @@ function checkSticky(){
 }
 window.addEventListener('scroll',checkSticky,{passive:true});
 if(sbDismiss){sbDismiss.addEventListener('click',()=>{sbDismissed=true;stickyBar.classList.remove('visible');});}
+
+/* Gallery — thumbnail click swaps the main product photo */
+const pdpMainImg=document.getElementById('pdp-main-img');
+const pdpMainSrc=document.getElementById('pdp-main-src');
+document.querySelectorAll('.pdp-thumb').forEach(thumb=>{
+  thumb.addEventListener('click',()=>{
+    document.querySelectorAll('.pdp-thumb').forEach(t=>t.classList.remove('active'));
+    thumb.classList.add('active');
+    pdpMainImg.src=thumb.dataset.jpg;
+    pdpMainImg.alt=thumb.dataset.alt;
+    pdpMainSrc.srcset=thumb.dataset.webp;
+  });
+});
+
+/* Variant picker — Individual vs Couple updates price, anchor and CTA */
+const pdpPlans={
+  individual:{price:'$499',anchor:'vs. <strong>$3,500–$10,000+</strong> at a local law firm',cta:'Get my estate plan — $499'},
+  couple:{price:'$599',anchor:'Two individual plans would be <strong>$998</strong> — you save $399',cta:'Get our estate plan — $599'}
+};
+const pdpPrice=document.getElementById('pdp-price');
+const pdpAnchor=document.getElementById('pdp-anchor');
+const pdpCta=document.getElementById('pdp-cta-btn');
+const pdpVarIndividual=document.getElementById('pdp-var-individual');
+const pdpVarCouple=document.getElementById('pdp-var-couple');
+function selectPlan(key){
+  const plan=pdpPlans[key];
+  pdpPrice.textContent=plan.price;
+  pdpAnchor.innerHTML=plan.anchor;
+  pdpCta.innerHTML=plan.cta+' <span aria-hidden="true">→</span>';
+  pdpCta.setAttribute('aria-label',plan.cta);
+  const isIndividual=key==='individual';
+  pdpVarIndividual.classList.toggle('active',isIndividual);
+  pdpVarIndividual.setAttribute('aria-pressed',String(isIndividual));
+  pdpVarCouple.classList.toggle('active',!isIndividual);
+  pdpVarCouple.setAttribute('aria-pressed',String(!isIndividual));
+}
+if(pdpVarIndividual){pdpVarIndividual.addEventListener('click',()=>selectPlan('individual'));}
+if(pdpVarCouple){pdpVarCouple.addEventListener('click',()=>selectPlan('couple'));}
 </script>
 </body>
 </html>
