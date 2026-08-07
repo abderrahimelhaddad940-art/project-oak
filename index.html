@@ -319,6 +319,26 @@ section{padding:88px 0}
 .process-step:last-child .ps-arrow{display:none}
 
 /* ════════════════════════════
+   MYTHS — scannable myth/truth cards
+════════════════════════════ */
+#myths{background:var(--sky);padding:88px 0}
+.myth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-top:28px}
+.myth-card{background:var(--white);border:1px solid var(--bdr);border-radius:var(--r12);padding:22px 24px;transition:box-shadow .2s,transform .2s}
+.myth-card:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
+.myth-card.full{grid-column:1/-1;max-width:600px}
+.myth-tag{display:flex;align-items:center;gap:6px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.myth-tag svg{width:12px;height:12px;flex-shrink:0}
+.myth-tag.no{color:var(--acc-rose)}
+.myth-tag.yes{color:var(--forest)}
+.myth-q{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--ink);line-height:1.4;margin-bottom:16px;padding-bottom:16px;border-bottom:1px dashed var(--bdr-2)}
+.myth-a{font-size:.8rem;color:var(--ink-3);line-height:1.65}
+.myth-a strong{color:var(--ink);font-weight:600}
+@media(max-width:680px){
+  .myth-grid{grid-template-columns:1fr}
+  .myth-card.full{max-width:none}
+}
+
+/* ════════════════════════════
    WHAT YOU RECEIVE
 ════════════════════════════ */
 #receive{background:var(--linen-2)}
@@ -1295,52 +1315,47 @@ footer{background:#0D1F17;padding:32px 0;text-align:center}
 </section>
 
 <!-- ════ MYTHS — Chapters 5 & 17 ════ -->
-<section id="myths" style="background:var(--sky);padding:88px 0">
+<section id="myths">
   <div class="w">
     <div class="sr">
       <h2>5 beliefs that are keeping your family<br>unprotected right now.</h2>
       <p style="margin-top:14px;max-width:520px;color:var(--ink-3)">These aren't edge cases. They are the exact thoughts that have delayed estate planning for millions of Americans, including, probably, you. Each one is false. Here's the truth.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:0;margin-top:28px;border:1px solid var(--bdr);border-radius:var(--r12);overflow:hidden" class="sr">
+    <div class="myth-grid sr">
 
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--white);border-bottom:1px solid var(--bdr)">
-        <div style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--mint-2);line-height:1;flex-shrink:0;width:28px;text-align:center">1</div>
-        <div>
-          <div style="font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--serif);font-style:italic">"I'm not wealthy enough to need a trust."</div>
-          <div style="font-size:.78rem;color:var(--ink-3);line-height:1.7">A trust isn't about wealth. It's about control and privacy. If you own a home, have children, have a bank account, or simply want to decide who gets your belongings, a trust protects you. The people who need trusts least are the very wealthy, who have attorneys on retainer. The people who need them most are ordinary families, who have nobody looking out for them.</div>
-        </div>
+      <div class="myth-card">
+        <div class="myth-tag no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Myth</div>
+        <div class="myth-q">"I'm not wealthy enough to need a trust."</div>
+        <div class="myth-tag yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Truth</div>
+        <div class="myth-a"><strong>A trust isn't about wealth. It's about control and privacy.</strong> If you own a home, have children, have a bank account, or simply want to decide who gets your belongings, a trust protects you. The people who need trusts least are the very wealthy, who have attorneys on retainer. The people who need them most are ordinary families, who have nobody looking out for them.</div>
       </div>
 
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--linen);border-bottom:1px solid var(--bdr)">
-        <div style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--mint-2);line-height:1;flex-shrink:0;width:28px;text-align:center">2</div>
-        <div>
-          <div style="font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--serif);font-style:italic">"A will is enough."</div>
-          <div style="font-size:.78rem;color:var(--ink-3);line-height:1.7">A will goes through probate, the public court process that takes 9–18 months, costs thousands in fees, and makes your financial affairs a matter of public record. A revocable living trust bypasses probate entirely. Assets transfer directly to your beneficiaries, privately, within days. A will and a trust serve different purposes; a complete estate plan includes both.</div>
-        </div>
+      <div class="myth-card">
+        <div class="myth-tag no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Myth</div>
+        <div class="myth-q">"A will is enough."</div>
+        <div class="myth-tag yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Truth</div>
+        <div class="myth-a"><strong>A will goes through probate, the public court process.</strong> It takes 9–18 months, costs thousands in fees, and makes your financial affairs a matter of public record. A revocable living trust bypasses probate entirely, transferring assets directly to your beneficiaries, privately, within days. A will and a trust serve different purposes; a complete estate plan includes both.</div>
       </div>
 
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--white);border-bottom:1px solid var(--bdr)">
-        <div style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--mint-2);line-height:1;flex-shrink:0;width:28px;text-align:center">3</div>
-        <div>
-          <div style="font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--serif);font-style:italic">"Once I sign it, I'm locked in forever."</div>
-          <div style="font-size:.78rem;color:var(--ink-3);line-height:1.7">A revocable living trust (which is what GuardTies provides) can be changed, updated, or revoked at any time while you're alive. Had another child? Got divorced? Bought a new property? You update it. That's what the trust amendment form is for. You are never locked in.</div>
-        </div>
+      <div class="myth-card">
+        <div class="myth-tag no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Myth</div>
+        <div class="myth-q">"Once I sign it, I'm locked in forever."</div>
+        <div class="myth-tag yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Truth</div>
+        <div class="myth-a"><strong>You're never locked in.</strong> A revocable living trust (which is what GuardTies provides) can be changed, updated, or revoked at any time while you're alive. Had another child? Got divorced? Bought a new property? You update it using the trust amendment form.</div>
       </div>
 
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--linen);border-bottom:1px solid var(--bdr)">
-        <div style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--mint-2);line-height:1;flex-shrink:0;width:28px;text-align:center">4</div>
-        <div>
-          <div style="font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--serif);font-style:italic">"A trust eliminates estate taxes."</div>
-          <div style="font-size:.78rem;color:var(--ink-3);line-height:1.7">A revocable living trust does not reduce estate taxes on its own: your assets are still part of your taxable estate. What it does do is transfer them privately and quickly, without probate. If tax minimization is a priority, the advanced protection documents in GuardTies (bypass trust structures, disclaimer trust provisions, step-up in basis clauses) address these strategies specifically.</div>
-        </div>
+      <div class="myth-card">
+        <div class="myth-tag no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Myth</div>
+        <div class="myth-q">"A trust eliminates estate taxes."</div>
+        <div class="myth-tag yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Truth</div>
+        <div class="myth-a"><strong>It doesn't reduce estate taxes on its own.</strong> Your assets are still part of your taxable estate. What it does do is transfer them privately and quickly, without probate. If tax minimization is a priority, GuardTies' advanced protection documents (bypass trust structures, disclaimer trust provisions, step-up in basis clauses) address it specifically.</div>
       </div>
 
-      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--white)">
-        <div style="font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--mint-2);line-height:1;flex-shrink:0;width:28px;text-align:center">5</div>
-        <div>
-          <div style="font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:4px;font-family:var(--serif);font-style:italic">"I'll sort this out when I'm older."</div>
-          <div style="font-size:.78rem;color:var(--ink-3);line-height:1.7">Estate plans can only be created while you have legal capacity. If you lose that capacity, through accident, illness, or sudden incapacity, it becomes legally impossible to create one. The people who most need a trust are those who think they have more time. You don't know when the window closes. You only know it will.</div>
-        </div>
+      <div class="myth-card full">
+        <div class="myth-tag no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Myth</div>
+        <div class="myth-q">"I'll sort this out when I'm older."</div>
+        <div class="myth-tag yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Truth</div>
+        <div class="myth-a"><strong>You don't know when the window closes. You only know it will.</strong> Estate plans can only be created while you have legal capacity. If you lose that capacity, through accident, illness, or sudden incapacity, it becomes legally impossible to create one. The people who most need a trust are those who think they have more time.</div>
       </div>
 
     </div>
